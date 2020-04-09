@@ -1,0 +1,69 @@
+/*底部导航样式*/
+
+.am-navbar {
+	border-bottom: 3px solid #999999;
+	/*height: 53px;*/
+	line-height: 0px;
+}
+
+.am-navbar-default .am-navbar-nav {
+	background-color: #FFFFFF;
+}
+
+.my-nav-icon {
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 36px;
+	height: 36px;
+	display: block;
+	line-height: 36px;
+	margin: 0px auto;
+	margin-top: 8px;
+	opacity: 0.5;
+	-webkit-transition: opacity 0.25s;
+	-moz-transition: opacity 0.25s;
+	transition: opacity 0.25s;
+}
+
+.home .home,
+.envelope .envelope,
+.search .search,
+.me .me {
+	opacity: 1;
+}
+
+.am-navbar-nav span[icon-type='home'] {
+	background-image: url(../images/home_off.png);
+}
+
+.am-navbar-nav span[icon-type='home_on'] {
+	background-image: url(../images/home_on.png);
+}
+
+.am-navbar-nav span[icon-type='envelope'] {
+	background-image: url(../images/envelope_off.png);
+}
+
+.am-navbar-nav span[icon-type='envelope_on'] {
+	background-image: url(../images/envelope_on.png);
+}
+
+.am-navbar-nav span[icon-type='search'] {
+	background-image: url(../images/search_off.png);
+}
+
+.am-navbar-nav span[icon-type='search_on'] {
+	background-image: url(../images/search_on.png);
+}
+
+.am-navbar-nav span[icon-type='me'] {
+	background-image: url(../images/me_off.png);
+}
+
+.am-navbar-nav span[icon-type='me_on'] {
+	background-image: url(../images/me_on.png);
+}
+
+[v-cloak] {
+	display: none;
+}

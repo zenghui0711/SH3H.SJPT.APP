@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>处置任务</title>
+
+		<!-- Set render engine for 360 browser -->
+		<meta name="renderer" content="webkit">
+
+		<!-- No Baidu Siteapp-->
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+		<!--<link rel="icon" type="image/png" href="assets/i/favicon.png">-->
+
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<!--<link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">-->
+
+		<!-- Add to homescreen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+		<!--<link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">-->
+
+		<!-- Tile icon for Win8 (144x144 + tile color) -->
+		<!--<meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">-->
+		<meta name="msapplication-TileColor" content="#0e90d2">
+
+		<link rel="stylesheet" href="../../../assets/css/amazeui.min.css">
+		<link rel="stylesheet" href="../../../assets/css/app.css">
+		<link rel="stylesheet" href="../../../css/header.css">
+		<link href="../../../mobiscrollDate/css/mobiscroll_date.css" rel="stylesheet" />
+
+		<style>
+			html,
+			body {
+				height: 100%;
+				font-family: "微软雅黑";
+				background-color: #E3F0FE;
+			}
+			
+			li {
+				list-style: none;
+			}
+			/*************upper*************/
+			
+			.con-upper {
+				background-color: #67B5FC;
+				padding-bottom: 56px;
+			}
+			
+			.uppers {
+				position: relative;
+				color: #FFFFFF;
+			}
+			
+			.uppers-info {
+				width: 96%;
+				margin: 0 auto;
+				/*margin: 0 20px;*/
+			}
+			
+			.uppers-info dt {
+				display: inline-block;
+				position: absolute;
+				z-index: 101;
+				right: 1%;
+			}
+			
+			.uppers-info dt img {
+				width: 90px;
+				height: 90px;
+			}
+			
+			.uppers-info dd {
+				display: inline-block;
+				margin-top: 10px;
+			}
+			
+			.uppers-number {
+				font-size: 18px;
+				font-weight: bold;
+			}
+			
+			.uppers-txt {
+				font-size: 14px;
+			}
+			/******menu******/
+			
+			.uppers-menu {
+				color: #9CC5FF;
+				background-color: #FFFFFF;
+				width: 96%;
+				height: 99px;
+				margin: 0 auto;
+				margin-top: 12px;
+				padding: 16px 0px 10px 12px;
+				position: absolute;
+				left: 2%;
+				overflow: hidden;
+			}
+			
+			.uppers-menu dl {
+				display: inline-block;
+				/*width: 24%;*/
+				width: 18%;
+				text-align: center;
+				margin: 0;
+				opacity: 0.4;
+			}
+			
+			.uppers-menu dl dt {
+				width: 40px;
+				margin: 0 auto;
+			}
+			
+			.uppers-menu dl dt img {
+				width: 100%;
+			}
+			
+			.on {
+				opacity: 1 !important;
+			}
+			/******menu******/
+			/*************upper*************/
+			/*************lower*************/
+			
+			.con-lower {
+				padding-top: 65px;
+				padding-bottom: 10px;
+			}
+			/*调整自适应beg*/
+			
+			.lowers {
+				height: 306px;
+				overflow: scroll;
+			}
+			/*当宽度超过370像素的效果 IPHONE678*/
+			
+			@media only screen and (min-width:370px) {
+				.lowers {
+					height: 404px;
+					overflow: scroll;
+				}
+			}
+			/*当高度超过370像素且高度超过700的效果 IPHONE678 PLUS*/
+			
+			@media only screen and (min-width:370px)and (min-height:700px) {
+				.lowers {
+					height: 474px;
+					overflow: scroll;
+				}
+			}
+			/*当高度超过800像素的效果 IPAD*/
+			
+			@media only screen and (min-height:800px) {
+				.lowers {
+					height: auto;
+					overflow: scroll;
+				}
+			}
+			/*调整自适应end*/
+			
+			.lower {
+				width: 96%;
+				margin: 0 auto;
+				margin-bottom: 10px;
+				background-color: #FFFFFF;
+				/*border-radius: 8px;*/
+				padding: 8px;
+				font-size: 14px;
+			}
+			
+			.lower-title {
+				font-size: 16px;
+				color: #9CC5FF;
+				border-left: 2px solid #9CC5FF;
+				padding-left: 6px;
+				height: 22px;
+				line-height: 22px;
+				margin-bottom: 10px;
+			}
+			
+			.lower ul {
+				padding: 0;
+				margin: 0;
+			}
+			
+			.CaseImg {
+				clear: both;
+				padding: 0;
+				margin: 0 auto;
+				height: 93px;
+				width: 100%;
+				/*触摸拖动图片*/
+				overflow: scroll;
+				-webkit-overflow-scrolling: touch;
+				display: -webkit-flex;
+			}
+			
+			.CaseImg li {
+				float: left;
+				height: 100%;
+				margin-right: 4px;
+			}
+			
+			.CaseImg li img {
+				width: 82px;
+				height: 100%;
+			}
+			
+			.txt-left {
+				display: inline-block;
+				text-align: right;
+				/*min-width: 80px;
+				width: 23%;*/
+				width: 90px;
+				position: absolute;
+				color: #797979;
+			}
+			
+			.txt-right {
+				display: inline-block;
+				width: 70%;
+				overflow: hidden;
+				margin-left: 96px;
+				color: #333333;
+			}
+			
+			.txt-describe {
+				height: 86px;
+			}
+			
+			.CaseInfo li {
+				position: relative;
+			}
+			
+			.CaseInfo li:after {
+				content: "";
+				border-bottom: 1px solid #F2F2F2;
+				color: #F2F2F2;
+				position: absolute;
+				left: 96px;
+				bottom: 2px;
+				height: 1px;
+				width: 72%;
+				-webkit-transform-origin: 0 0;
+				transform-origin: 0 0;
+				-webkit-transform: scaleY(0.5);
+				transform: scaleY(0.5);
+			}
+			
+			.txt-yellow {
+				background-color: #FFC963;
+				border-radius: 4px;
+				color: #FFFFFF;
+				padding: 1px 6px;
+				margin-left: 14px;
+			}
+			
+			.txt-danger {
+				background-color: #dd514c;
+				border-radius: 4px;
+				color: #FFFFFF;
+				padding: 1px 6px;
+				margin-left: 14px;
+			}
+			/*按钮*/
+			
+			.lower-btn {
+				width: 96%;
+				margin: 0 auto;
+			}
+			
+			.lower-btn button {
+				border-radius: 6px;
+			}
+			/*************lower*************/
+			/*************弹窗*************/
+			
+			.am-modal-dialog {
+				width: 400px;
+				position: absolute;
+				left: 0;
+				top: 10%;
+			}
+			
+			.am-modal-dialog .lower {
+				width: 98%;
+				margin-bottom: 0;
+			}
+			
+			.am-modal-bd {
+				padding: 15px 0;
+				text-align: initial;
+			}
+			
+			.am-form-group {
+				margin-bottom: 0.8rem;
+			}
+			
+			.am-form-group label,
+			.am-form-group textarea {
+				width: 100%;
+			}
+			
+			.am-form-group input {
+				width: 100%;
+				height: 37px;
+				line-height: 37px;
+				border: 1px solid transparent;
+				border-color: #e6e6e6;
+			}
+			
+			.req-title {
+				color: #797979;
+				font-size: 14px;
+			}
+			/*接单备注计数数字*/
+			
+			.req-txteare-numbr {
+				text-align: right;
+				display: inherit;
+				color: #797979;
+				font-size: 14px;
+				font-weight: normal;
+			}
+			/*时间*/
+			
+			.req-time {
+				position: relative;
+			}
+			
+			.req-time i {
+				position: absolute;
+				right: 4px;
+				top: 32px;
+			}
+			/*(带时间条件时)弹窗样式beg*/
+			
+			.dwo {
+				/*background: none;*/
+			}
+			
+			.dw-persp {
+				z-index: 1111;
+			}
+			/*(带时间条件时)弹窗样式end*/
+			/*************弹窗*************/
+		</style>
+	</head>
+
+	<body>
+		<div class="con">
+			<div class="con-upper">
+				<header data-am-widget="header" class="am-header am-header-default">
+					<div class="am-header-left am-header-nav">
+						<a href="javascript:;" class="leftlink">
+							<span class="am-icon-chevron-left am-icon-sm"></span>
+						</a>
+					</div>
+					<h1 class="am-header-title">
+				        <a href="javascript:;" class="titlelink">
+				        	案件详情
+				        </a>
+				    </h1>
+					<!--<div class="am-header-right am-header-nav">
+						<a href="javascript:;" class="rightlink">
+							<i class="am-header-icon am-icon-bars"></i>
+						</a>
+					</div>-->
+				</header>
+				<div class="uppers">
+					<dl class="uppers-info">
+						<dd>
+							<div class="uppers-number">1801H7826642</div>
+							<div class="uppers-txt">上报时间：<span>2018-01-04 14:52</span></div>
+							<div class="uppers-txt">发生地址：<span>上海市园中路1号</span></div>
+						</dd>
+						<dt><img src="../../../images/map.png" class="maplink"></dt>
+					</dl>
+					<div class="uppers-menu">
+						<dl class="on" hre-name='跳转地址'>
+							<dt><img src="../../../images/ICON/ico_财务管理_订单查询 (1).png"></dt>
+							<dd>详情</dd>
+						</dl>
+
+						<dl hre-name='跳转地址'>
+							<dt><img src="../../../images/ICON/待处理.png"></dt>
+							<dd>接单</dd>
+						</dl>
+
+						<dl hre-name='跳转地址'>
+							<dt><img src="../../../images/ICON/状态-派单 (1).png"></dt>
+							<dd>转派</dd>
+						</dl>
+
+						<dl hre-name='跳转地址'>
+							<dt><img src="../../../images/ICON/_订单 处理中 (1).png"></dt>
+							<dd>退单</dd>
+						</dl>
+
+						<dl hre-name='跳转地址'>
+							<dt><img src="../../../images/ICON/_订单 处理中 (1).png"></dt>
+							<dd>退单</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+			<div class="con-lower">
+
+				<div class="lowers">
+
+					<!--案件照片-->
+					<div class="lower">
+						<div class="lower-title">案件照片</div>
+						<ul class="CaseImg">
+							<li><img src="../../../images/nopicUpload.jpg"></li>
+							<li><img src="../../../images/nopicUpload.jpg"></li>
+							<li><img src="../../../images/nopicUpload.jpg"></li>
+							<li><img src="../../../images/nopicUpload.jpg"></li>
+							<li><img src="../../../images/nopicUpload.jpg"></li>
+						</ul>
+					</div>
+
+					<!--基本信息-->
+					<div class="lower">
+						<div class="lower-title">基本信息</div>
+						<ul class="CaseInfo">
+							<li>
+								<div class="txt-left">问题描述</div>
+								<div class="txt-right txt-describe">Pellentesque iaculis, augue eu bibendum posuere, erat orci vestibulum mi, id tempor augue enim ut sapien. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris scelerisque orci sed sapien vulputate aliquam. Sed volutpat maximus libero eget porttitor. Ut a massa porta, dapibus justo sed, varius sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent neque arcu, aliquam ut eros sollicitudin, fermentum venenatis risus. Vestibulum eleifend ligula a odio tristique, et molestie lacus pretium. Etiam tempus ornare eros vel pharetra. Pellentesque in felis quam. In risus justo, congue ut quam vel, dictum dapibus nunc.</div>
+							</li>
+							<li>
+								<div class="txt-left">联系人</div>
+								<div class="txt-right">联系人</div>
+							</li>
+							<li>
+								<div class="txt-left">联系方式</div>
+								<div class="txt-right">联系方式</div>
+							</li>
+						</ul>
+
+					</div>
+
+					<!--派单信息-->
+					<div class="lower">
+						<div class="lower-title">派单信息</div>
+						<ul class="CaseInfo">
+							<li>
+								<div class="txt-left">派单意见</div>
+								<div class="txt-right txt-describe">Pellentesque iaculis, augue eu bibendum posuere, erat orci vestibulum mi, id tempor augue enim ut sapien. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris scelerisque orci sed sapien vulputate aliquam. Sed volutpat maximus libero eget porttitor. Ut a massa porta, dapibus justo sed, varius sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent neque arcu, aliquam ut eros sollicitudin, fermentum venenatis risus. Vestibulum eleifend ligula a odio tristique, et molestie lacus pretium. Etiam tempus ornare eros vel pharetra. Pellentesque in felis quam. In risus justo, congue ut quam vel, dictum dapibus nunc.</div>
+							</li>
+							<li>
+								<div class="txt-left">要求完成时间</div>
+								<div class="txt-right">2018-12-28 14：30<span class="txt-yellow">即将超期</span></div>
+							</li>
+							<li>
+								<div class="txt-left">派单时间</div>
+								<div class="txt-right">2018-12-15 14：30</div>
+							</li>
+						</ul>
+					</div>
+
+					<!--接单信息-->
+					<div class="lower">
+						<div class="lower-title">接单信息</div>
+						<ul class="CaseInfo">
+							<li>
+								<div class="txt-left">接单意见</div>
+								<div class="txt-right txt-describe">Pellentesque iaculis, augue eu bibendum posuere, erat orci vestibulum mi, id tempor augue enim ut sapien. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris scelerisque orci sed sapien vulputate aliquam. Sed volutpat maximus libero eget porttitor. Ut a massa porta, dapibus justo sed, varius sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent neque arcu, aliquam ut eros sollicitudin, fermentum venenatis risus. Vestibulum eleifend ligula a odio tristique, et molestie lacus pretium. Etiam tempus ornare eros vel pharetra. Pellentesque in felis quam. In risus justo, congue ut quam vel, dictum dapibus nunc.</div>
+							</li>
+							<li>
+								<div class="txt-left">接单时间</div>
+								<div class="txt-right">2018-12-15 14：30</div>
+							</li>
+						</ul>
+					</div>
+
+					<!--接单操作-->
+					<div class="lower">
+						<div class="lower-title">接单信息</div>
+						<div class="lower-btn">
+							<button type="button" id="loca_JD" class="am-btn am-btn-secondary am-btn-block">接 单</button>
+						</div>
+					</div>
+
+					<!--先行联系-->
+					<div class="lower">
+						<div class="lower-title">先行联系</div>
+						<ul class="CaseInfo">
+							<li>
+								<div class="txt-left">是否先行联系</div>
+								<div class="txt-right">已联</div>
+							</li>
+							<li>
+								<div class="txt-left">联系人</div>
+								<div class="txt-right">张三</div>
+							</li>
+							<li>
+								<div class="txt-left">联系时间</div>
+								<div class="txt-right">2018-12-15 14：30</div>
+							</li>
+						</ul>
+						<div class="lower-btn">
+							<button type="button" id="loca_CONTACT" class="am-btn am-btn-secondary am-btn-block">先行联系</button>
+						</div>
+					</div>
+
+					<!--未先行联系-->
+					<div class="lower">
+						<div class="lower-title">先行联系</div>
+						<ul class="CaseInfo">
+							<li>
+								<div class="txt-left">是否先行联系</div>
+								<div class="txt-right">未联</div>
+							</li>
+							<li>
+								<div class="txt-left">未联系原因</div>
+								<div class="txt-right">未联系原因1</div>
+							</li>
+							<li>
+								<div class="txt-left">操作时间</div>
+								<div class="txt-right">2018-12-15 14：30</div>
+							</li>
+						</ul>
+						<div class="lower-btn">
+							<button type="button" id="loca_NO_CONTACT" class="am-btn am-btn-secondary am-btn-block">先行联系</button>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+			<!--弹窗内容-->
+			<form class="am-form" id="form_model">
+				<div class="am-modal am-modal-no-btn" tabindex="-1" id="my-prompt">
+					<div class="am-modal-dialog">
+						<div class="am-modal-bd">
+							<!--接单操作-->
+							<div class="lower JD_model">
+								<div class="lower-title">接单操作</div>
+								<div class="am-form-group">
+									<label class="req-title" for="JD_REMARK">接单备注</label>
+									<textarea id="JD_REMARK" rows="5" maxlength='200' data-validation-message="请输入1-200字以内" required></textarea>
+									<label class="req-txteare-numbr">
+										<span class="num-length1">0</span>/<span class="num-length2">200</span>
+									</label>
+								</div>
+							</div>
+
+							<!--先行联系操作-->
+							<div class="lower CONTACT_model">
+								<div class="lower-title">先行联系</div>
+
+								<!--是否联系-->
+								<div class="am-form-group">
+									<label class="req-title" for="CONTACT">是否联系</label>
+									<select id="CONTACT" data-am-selected="{btnWidth: '100%' }" required>
+										<option value="未联" selected>未联</option>
+										<option value="已联">已联</option>
+									</select>
+								</div>
+
+								<div class="am-form-group req-reason">
+									<label class="req-title" for="NO_CONTACT_REASON">未联原因</label>
+									<select id="NO_CONTACT_REASON" data-am-selected="{btnWidth: '100%' }" required>
+										<option value="未联原因1" selected>未联原因1</option>
+										<option value="未联原因2">未联原因2</option>
+									</select>
+								</div>
+
+								<div class="am-form-group req-time">
+									<label class="req-title" for="CONTACT_TIME">联系时间</label>
+									<input type="text" id="CONTACT_TIME" required readonly="readonly" />
+									<i class="am-icon-calendar am-icon-md"></i>
+								</div>
+
+								<div class="am-form-group">
+									<label class="req-title" for="CONTACT_NAME">联系人</label>
+									<input type="text" id="CONTACT_NAME" data-validation-message="请输入联系人名称" required/>
+								</div>
+
+							</div>
+
+							<!--未先行联系操作-->
+							<div class="lower NO_CONTACT_model">
+								<div class="lower-title">先行联系</div>
+
+								<!--是否联系-->
+								<div class="am-form-group">
+									<label class="req-title" for="CONTACT_2">是否联系</label>
+									<select id="CONTACT_2" data-am-selected="{btnWidth: '100%' }">
+										<option value="未联" selected>未联</option>
+										<option value="已联">已联</option>
+									</select>
+								</div>
+
+								<div class="am-form-group req-reason-2">
+									<label class="req-title" for="NO_CONTACT_REASON_2">未联原因</label>
+									<select id="NO_CONTACT_REASON_2" data-am-selected="{btnWidth: '100%' }">
+										<option value="未联原因1" selected>未联原因1</option>
+										<option value="未联原因2">未联原因2</option>
+									</select>
+								</div>
+
+								<div class="am-form-group req-time">
+									<label class="req-title" for="CONTACT_TIME_2">联系时间</label>
+									<input type="text" id="CONTACT_TIME_2" required readonly="readonly" />
+									<i class="am-icon-calendar am-icon-md"></i>
+								</div>
+
+								<div class="am-form-group">
+									<label class="req-title" for="CONTACT_NAME_2">联系人</label>
+									<input type="text" id="CONTACT_NAME_2" data-validation-message="请输入联系人名称" required/>
+								</div>
+
+							</div>
+
+							<div class="lower-btn">
+								<button type="submit" id="Save" class="am-btn am-btn-secondary am-btn-block">确 定</button>
+							</div>
+						</div>
+						<!--<div class="am-modal-footer">-->
+						<!--<span class="am-modal-btn" data-am-modal-cancel>取消</span>-->
+						<!--<span class="am-modal-btn" data-am-modal-confirm>提交</span>-->
+
+						<!--</div>-->
+					</div>
+				</div>
+			</form>
+	</body>
+	<script src="../../../js/jquery-3.2.1.min.js"></script>
+	<script src="../../../assets/js/amazeui.min.js"></script>
+	<script src="../../../mobiscrollDate/js/mobiscroll_date.js" charset="gb2312"></script>
+	<script src="../../../mobiscrollDate/js/mobiscroll.js"></script>
+	<script>
+		(function() {
+			init();
+
+			function init() {
+
+				menu(); //菜单切换
+				JD_model(); //接单操作
+				CONTACT_model(); //先行联系操作
+				NO_CONTACT_model(); //未先行联系操作
+			}
+
+			/*菜单切换*/
+			function menu() {
+				$('.uppers-menu dl').on('click', function() {
+					if(!$(this).hasClass('on')) {
+						$(this).addClass('on').siblings().removeClass('on');
+					}
+
+					//跳转
+					//var hreName=$(this).attr('hre-name');//跳转地址
+					//window.location=hreName;
+
+				})
+			}
+			/*接单操作*/
+			function JD_model() {
+				$('#loca_JD').on('click', function() {
+					$('#my-prompt').modal('open'); //打开窗体
+
+					$(".JD_model").show(); //显示【接单】窗体内容
+					$(".CONTACT_model").hide(); //隐藏【先行联系】窗体内容
+					$(".NO_CONTACT_model").hide(); //隐藏【未先行联系】窗体内容
+
+					//初始化【接单】窗体内的表单信息
+					$("#JD_REMARK").val('');
+
+					Valid('JD'); //添加验证
+
+				});
+			}
+
+			/*先行联系操作*/
+			function CONTACT_model() {
+
+				$('#loca_CONTACT').on('click', function() {
+
+					$('#my-prompt').modal('open'); //打开窗体
+
+					$(".JD_model").hide(); //隐藏【接单】窗体内容
+					$(".CONTACT_model").show(); //显示【先行联系】窗体内容
+					$(".NO_CONTACT_model").hide(); //隐藏【未先行联系】窗体内容
+
+					//初始化【先行联系】窗体内的表单信息
+					BindTime('CONTACT');
+
+					Valid('CONTACT'); //添加验证
+
+				});
+			}
+
+			/*未先行联系操作*/
+			function NO_CONTACT_model() {
+				$('#loca_NO_CONTACT').on('click', function() {
+					$('#my-prompt').modal('open'); //打开窗体
+
+					$(".JD_model").hide(); //隐藏【接单】窗体内容
+					$(".CONTACT_model").hide(); //隐藏【先行联系】窗体内容
+					$(".NO_CONTACT_model").show(); //显示【未先行联系】窗体内容
+
+					//初始化【未先行联系】窗体内的表单信息
+					BindTime('NO_CONTACT');
+//					$("#CONTACT_2").val('未联');
+					$("#CONTACT_NAME_2").focus();
+					$("#CONTACT_NAME_2").val('');
+
+					Valid('NO_CONTACT'); //添加验证
+				});
+			}
+
+			//初始化时间工具和下拉框信息
+			function BindTime(btnType) {
+				var dates = new Date();
+				var Years = (dates).getFullYear();
+				var Months = (dates).getMonth(); //获取当前月份(0-11,0代表1月)
+
+				var opt = {};
+				opt.date = {
+					preset: 'date'
+				}; //格式：年月日
+				opt.datetime = {
+					preset: 'datetime'
+				}; //格式：年月日时分
+				opt.time = {
+					preset: 'time'
+				}; //格式：时分
+				opt.default = {
+					theme: 'android-ics light', //皮肤样式
+					display: 'model', //显示方式 
+					mode: 'scroller', //日期选择模式
+					dateFormat: 'yyyy-mm-dd', //日期格式
+					lang: 'zh', //语言
+					showNow: false, //是否显示回到今天按钮
+					nowText: "今天",
+					startYear: 1990, //开始年份
+					endYear: 2099, //结束年份
+
+				};
+
+				if(btnType == "CONTACT") {
+					$("#CONTACT_TIME").mobiscroll($.extend(opt['date'], opt['default']));
+					$('#CONTACT_TIME').scroller('setDate', new Date(Years, Months, 1), true);
+				} else if(btnType == "NO_CONTACT") {
+					$("#CONTACT_TIME_2").mobiscroll($.extend(opt['date'], opt['default']));
+					$('#CONTACT_TIME_2').scroller('setDate', new Date(Years, Months, 1), true);
+				}
+
+				//处理情况
+				//				$("#cl_condition").select({
+				//					title: "请选择",
+				//					closeText: "取消",
+				//					items: ["法官", "医生", "猎人", "学生", "记者", "其他"]
+				//				});
+
+				//退单理由
+				//				$("#td_Reason").select({
+				//					title: "请选择",
+				//					closeText: "取消",
+				//					items: ["法官", "医生", "猎人", "学生", "记者", "其他"]
+				//				});
+
+			}
+
+			/********验证********/
+			function Valid(btnType) {
+				var $form = $('#form_model');
+				$form.validator({
+					onValid: function(validity) {
+
+						if(btnType == "JD") {
+							/***监控字数***/
+							var JD_REMARK_length = $("#JD_REMARK").val().length;
+							$(".num-length1").html(JD_REMARK_length)
+							$(".num-length2").html(200 - parseFloat(JD_REMARK_length))
+							/***监控字数***/
+						} else if(btnType == "CONTACT") {
+							if($("#CONTACT").val() == "已联") {
+								$(".req-reason").hide()
+							} else {
+								$(".req-reason").show()
+							}
+						} else if(btnType == "NO_CONTACT") {
+							if($("#CONTACT_2").val() == "已联") {
+								$(".req-reason-2").hide()
+							} else {
+								$(".req-reason-2").show()
+							}
+						}
+
+						//通过验证效果
+						$(validity.field).closest('.am-form-group').find('.am-alert').hide();
+					},
+					onInValid: function(validity) {
+
+						if(btnType == "JD") {
+							/***监控字数***/
+							var JD_REMARK_length = $("#JD_REMARK").val().length;
+							$(".num-length1").html(JD_REMARK_length)
+							$(".num-length2").html(200 - parseFloat(JD_REMARK_length))
+							/***监控字数***/
+						}
+
+						//未通过验证效果
+						var $field = $(validity.field);
+						var $group = $field.closest('.am-form-group');
+						var $alert = $group.find('.am-alert');
+						// 使用自定义的提示信息 或 插件内置的提示信息
+						var msg = $field.data('validationMessage') || this.getValidationMessage(validity);
+
+						if(!$alert.length) {
+							$alert = $('<div class="am-alert am-alert-danger"></div>').hide().
+							appendTo($group);
+						}
+
+						$alert.html(msg).show();
+
+					},
+					submit: function() {
+						var formValidity = this.isFormValid();
+						console.warn('验证状态：', formValidity ? '通过' : '未通过');
+						if(formValidity) {
+							Save(btnType)
+						}
+						return false;
+					}
+				});
+
+			}
+			/********提交********/
+			function Save(btnType) {
+				console.log('提交 btnType', btnType)
+
+				if(btnType == "JD") {
+					//接单操作提交
+
+					$("#my-prompt").modal('close');
+
+				} else if(btnType == "CONTACT") {
+					//先行联系操作提交
+
+					$("#my-prompt").modal('close');
+				} else if(btnType == "NO_CONTACT") {
+					//未先行联系操作提交
+
+					$("#my-prompt").modal('close');
+				}
+			}
+		})(window);
+	</script>
+
+</html>

@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>处置任务</title>
+
+	<!-- Set render engine for 360 browser -->
+	<meta name="renderer" content="webkit">
+
+	<!-- No Baidu Siteapp-->
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+	<link rel="icon" type="image/png" href="../../../assets/i/favicon.png">
+
+	<!-- Add to homescreen for Chrome on Android -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<link rel="icon" sizes="192x192" href="../../../assets/i/app-icon72x72@2x.png">
+
+	<!-- Add to homescreen for Safari on iOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+	<link rel="apple-touch-icon-precomposed" href="../../../assets/i/app-icon72x72@2x.png">
+
+	<!-- Tile icon for Win8 (144x144 + tile color) -->
+	<meta name="msapplication-TileImage" content="../../../assets/i/app-icon72x72@2x.png">
+	<meta name="msapplication-TileColor" content="#0e90d2">
+
+	<link rel="stylesheet" href="../../../assets/css/amazeui.min.css">
+	<link rel="stylesheet" href="../../../assets/css/app.css">
+	<!--<link rel="stylesheet" href="../assets/css/font-awesome.min.css" />-->
+	<link rel="stylesheet" href="../../../css/sy_navbar.css">
+	<link rel="stylesheet" href="../../../css/SJXSDW/SJCZ.css" />
+	<script src="../../../js/vue.min.js"></script>
+	<link href="../../../mobiscrollDate/css/mobiscroll_date.css" rel="stylesheet" />
+	<link href="../../../css/header.css" rel="stylesheet" />
+	<style>
+
+	</style>
+
+	<script>
+	</script>
+</head>
+
+<body>
+	<!--在这里编写你的代码-->
+	<header data-am-widget="header" class="am-header am-header-default">
+		<div class="am-header-left am-header-nav">
+			<a href="javascript:;" class="leftlink">
+				<span class="am-icon-chevron-left am-icon-sm"></span>
+			</a>
+		</div>
+		<h1 class="am-header-title">
+			          	<a href="javascript:;" class="titlelink">
+			            	待办事项
+			          	</a>
+		</h1>
+
+	</header>
+	
+	<div class="am-panel am-panel-default body_context_color">
+		<div class="am-panel-bd">
+			<div class="am-panel am-panel-default box_border_radius_small">
+				<div class="am-panel-bd">
+					<div class="search_box" id="search_box">
+						<img src="../../../images/search_off2.png" />
+					</div>
+					<div class="search_text">查询条件</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="am-panel am-panel-default body_context_color case_list_info" id="components-demo">
+		<div class="am-panel-bd">
+			<div class="am-panel am-panel-default box_border_radius_big">
+				<div class="am-panel-bd ">
+
+					<div class="caseinfo_text">
+						<div>
+							<div>
+								<div class="TASK_ID">1812C2927318<span class="taskid_from taskid_from_backg_one">监督员上报</span></div>
+							</div>
+							<div class="case_img_div">
+								<div class="case_info_img">
+									<img src="../../../images/5EC6D2161526A179BB5B29E6989AC3EA.jpg" />
+								</div>
+								<div class="case_status_img">
+									<img src="../../../images/即将超期水印.png" />
+								</div>
+							</div>
+							<div class="case_context">
+								<div>问题描述：<span>灵山路1396弄 暴露垃圾堆放多日无人清理...</span></div>
+							</div>
+							<div class="case_time">
+								<div><span class="case_title">上报时间:</span> <span>2018-12-13 12:34</span></div>
+							</div>
+							<div class="case_time">
+								<div><span class="case_title">要求完成时间:</span> <span>2018-12-28 12:34</span></div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="am-panel-bd">
+			<div class="am-panel am-panel-default box_border_radius_big">
+				<div class="am-panel-bd ">
+
+					<div class="caseinfo_text">
+						<div>
+							<div>
+								<div class="TASK_ID">1812C2927318<span class="taskid_from taskid_from_backg_one">监督员上报</span></div>
+							</div>
+							<div class="case_img_div">
+								<div class="case_info_img">
+									<img src="../../../images/5EC6D2161526A179BB5B29E6989AC3EA.jpg" />
+								</div>
+								<div class="case_status_img">
+									<img src="../../../images/即将超期水印.png" />
+								</div>
+							</div>
+							<div class="case_context">
+								<div>问题描述：<span>灵山路1396弄 暴露垃圾堆放多日无人清理...</span></div>
+							</div>
+							<div class="case_time">
+								<div><span class="case_title">上报时间:</span> <span>2018-12-13 12:34</span></div>
+							</div>
+							<div class="case_time">
+								<div><span class="case_title">要求完成时间:</span> <span>2018-12-28 12:34</span></div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="am-panel-bd">
+			<div class="am-panel am-panel-default box_border_radius_big">
+				<div class="am-panel-bd ">
+
+					<div class="caseinfo_text">
+						<div>
+							<div>
+								<div class="TASK_ID">1812C2927318<span class="taskid_from taskid_from_backg_one">监督员上报</span></div>
+							</div>
+							<div class="case_img_div">
+								<div class="case_info_img">
+									<img src="../../../images/5EC6D2161526A179BB5B29E6989AC3EA.jpg" />
+								</div>
+								<div class="case_status_img">
+									<img src="../../../images/即将超期水印.png" />
+								</div>
+							</div>
+							<div class="case_context">
+								<div>问题描述：<span>灵山路1396弄 暴露垃圾堆放多日无人清理...</span></div>
+							</div>
+							<div class="case_time">
+								<div><span class="case_title">上报时间:</span> <span>2018-12-13 12:34</span></div>
+							</div>
+							<div class="case_time">
+								<div><span class="case_title">要求完成时间:</span> <span>2018-12-28 12:34</span></div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="am-panel-bd">
+			<div class="am-panel am-panel-default box_border_radius_big">
+				<div class="am-panel-bd ">
+
+					<div class="caseinfo_text">
+						<div>
+							<div>
+								<div class="TASK_ID">1812C2927318<span class="taskid_from taskid_from_backg_one">监督员上报</span></div>
+							</div>
+							<div class="case_img_div">
+								<div class="case_info_img">
+									<img src="../../../images/5EC6D2161526A179BB5B29E6989AC3EA.jpg" />
+								</div>
+								<div class="case_status_img">
+									<img src="../../../images/即将超期水印.png" />
+								</div>
+							</div>
+							<div class="case_context">
+								<div>问题描述：<span>灵山路1396弄 暴露垃圾堆放多日无人清理...</span></div>
+							</div>
+							<div class="case_time">
+								<div><span class="case_title">上报时间:</span> <span>2018-12-13 12:34</span></div>
+							</div>
+							<div class="case_time">
+								<div><span class="case_title">要求完成时间:</span> <span>2018-12-28 12:34</span></div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="am-panel-bd">
+			<div class="am-panel am-panel-default box_border_radius_big">
+				<div class="am-panel-bd ">
+
+					<div class="caseinfo_text">
+						<div>
+							<div>
+								<div class="TASK_ID">1812C2927318<span class="taskid_from taskid_from_backg_one">监督员上报</span></div>
+							</div>
+							<div class="case_img_div">
+								<div class="case_info_img">
+									<img src="../../../images/5EC6D2161526A179BB5B29E6989AC3EA.jpg" />
+								</div>
+								<div class="case_status_img">
+									<img src="../../../images/即将超期水印.png" />
+								</div>
+							</div>
+							<div class="case_context">
+								<div>问题描述：<span>灵山路1396弄 暴露垃圾堆放多日无人清理...</span></div>
+							</div>
+							<div class="case_time">
+								<div><span class="case_title">上报时间:</span> <span>2018-12-13 12:34</span></div>
+							</div>
+							<div class="case_time">
+								<div><span class="case_title">要求完成时间:</span> <span>2018-12-28 12:34</span></div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--<button-counter v-for="(item,index) in count" :count="item" :img="index"></button-counter>-->
+		<div class="am-panel-bd">
+			<button class="am-btn am-btn-default load_more_btn" onclick="loadmore(1)">
+				<i class="am-icon-spinner am-icon-spin" style="display: none;" id="load_more_icon"></i>
+				 <span id="load_more_text">点击加载更多</span> 
+			</button>
+		</div>
+
+	</div>
+	<!--弹窗内容-->
+	<form class="am-form" id="form_model">
+		<div class="am-modal am-modal-no-btn" tabindex="-1" id="my-prompt">
+			<div class="am-modal-dialog">
+				<div class="search_title">
+					<div class="lower-title">查询条件<span class="close" onclick="close_win_search()"></span></div>
+				</div>
+				<div class="am-modal-bd">
+
+					<!--查询条件-->
+					<div class="lower NO_CONTACT_model">
+
+						<div class="am-form-group">
+							<label class="req-title" for="TaskID">任务号</label>
+							<input type="text" id="TaskID" name="TaskID" />
+						</div>
+						<div class="am-form-group">
+							<label class="req-title" for="caseTaskID">案件号</label>
+							<input type="text" id="caseTaskID" name="caseTaskID" />
+						</div>
+						<div class="am-form-group">
+							<label class="req-title" for="address">发生地址</label>
+							<input type="text" id="address" name="address" />
+						</div>
+						<div class="am-form-group">
+							<label class="req-title" for="caseType">案件属性</label>
+							<select id="caseType" data-am-selected="{btnWidth: '100%' }" name="caseType">
+								<option value="属性一" selected>属性一</option>
+								<option value="属性二">属性二</option>
+							</select>
+						</div>
+						<div class="am-form-group">
+							<label class="req-title" for="caseBigClass">案件大类</label>
+							<select id="caseBigClass" data-am-selected="{btnWidth: '100%' }" name="caseBigClass">
+								<option value="属性一" selected>属性一</option>
+								<option value="属性二">属性二</option>
+							</select>
+						</div>
+						<div class="am-form-group">
+							<label class="req-title" for="caseSmallClass">案件小类</label>
+							<select id="caseSmallClass" data-am-selected="{btnWidth: '100%' }" name="caseSmallClass">
+								<option value="属性一" selected>属性一</option>
+								<option value="属性二">属性二</option>
+							</select>
+						</div>
+						<div class="am-form-group">
+							<label class="req-title" for="caseSubclass">案件子类</label>
+							<select id="caseSubclass" data-am-selected="{btnWidth: '100%' }" name="caseSubclass">
+								<option value="属性一" selected>属性一</option>
+								<option value="属性二">属性二</option>
+							</select>
+						</div>
+						<div class="am-form-group">
+							<label class="req-title" for="managerType">管理要点</label>
+							<select id="managerType" data-am-selected="{btnWidth: '100%' }" name="managerType">
+								<option value="属性一" selected>属性一</option>
+								<option value="属性二">属性二</option>
+							</select>
+						</div>
+						<div class="am-form-group">
+							<label class="req-title" for="operationType">操作类型</label>
+							<select id="operationType" data-am-selected="{btnWidth: '100%' }" name="operationType">
+								<option value="属性一" selected>属性一</option>
+								<option value="属性二">属性二</option>
+							</select>
+						</div>
+						<div class="am-form-group req-time">
+							<label class="req-title" for="Report_TIME_begin">上报时间</label>
+							<input type="text" id="Report_TIME_begin" required readonly="readonly" name="Report_TIME_begin" />
+							<i class="am-icon-calendar am-icon-md"></i>
+						</div>
+						<div class="am-form-group req-time2">
+							<!--<label class="req-title" for="Report_TIME_begin">上报时间</label>-->
+							<input type="text" id="Report_TIME_end" required readonly="readonly" name="Report_TIME_end" />
+							<i class="am-icon-calendar am-icon-md"></i>
+						</div>
+						<div class="am-form-group req-time">
+							<label class="req-title" for="Lower_TIME_begin">下发时间</label>
+							<input type="text" id="Lower_TIME_begin" required readonly="readonly" name="Lower_TIME_begin" />
+							<i class="am-icon-calendar am-icon-md"></i>
+						</div>
+						<div class="am-form-group req-time2">
+							<!--<label class="req-title" for="Report_TIME_begin">上报时间</label>-->
+							<input type="text" id="Lower_TIME_end" required readonly="readonly" name="Lower_TIME_end" />
+							<i class="am-icon-calendar am-icon-md"></i>
+						</div>
+						<div class="am-form-group req-time">
+							<label class="req-title" for="Operation_TIME_begin">操作时间</label>
+							<input type="text" id="Operation_TIME_begin" required readonly="readonly" name="Operation_TIME_begin" />
+							<i class="am-icon-calendar am-icon-md"></i>
+						</div>
+						<div class="am-form-group req-time2">
+							<!--<label class="req-title" for="Report_TIME_begin">上报时间</label>-->
+							<input type="text" id="Operation_TIME_end" required readonly="readonly" name="Operation_TIME_end" />
+							<i class="am-icon-calendar am-icon-md"></i>
+						</div>
+
+					</div>
+
+					<div class="lower-btn">
+						<button type="submit" id="Save" class="am-btn am-btn-secondary am-btn-block">确 定</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+	<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default " id="">
+		<ul class="am-navbar-nav am-cf am-avg-sm-4">
+			<li hre-name='Navbar.html?iconType=home'>
+				<a href="javascript:;" class="">
+					<span class="my-nav-icon" icon-type="home"></span>
+				</a>
+			</li>
+			<li hre-name='Navbar'>
+				<a href="javascript:;" class="">
+					<span class="my-nav-icon" icon-type="envelope"></span>
+				</a>
+			</li>
+			<li hre-name='Navbar.html?iconType=search'>
+				<a href="javascript:;" class="">
+					<span class="my-nav-icon" icon-type="search"></span>
+				</a>
+			</li>
+			<li hre-name='Navbar.html?iconType=me'>
+				<a href="javascript:;" class="">
+					<span class="my-nav-icon" icon-type="me"></span>
+				</a>
+			</li>
+
+		</ul>
+	</div>
+	<script src="../../../js/jquery-3.2.1.min.js"></script>
+	<script src="../../../assets/js/amazeui.min.js"></script>
+	<script src="../../../js/caseListTemp.js"></script>
+	<script src="../../../mobiscrollDate/js/mobiscroll_date.js" charset="gb2312"></script>
+	<script src="../../../mobiscrollDate/js/mobiscroll.js"></script>
+	<script>
+		$("#Save").click(function() {
+			$("#my-prompt").modal('close');
+			var Search_date = $('form').serializeArray();
+			//			var Search_date= getElementItemValue("form1");
+			var str = "";
+			$.each(Search_date, function() {
+				if(this.value.length > 0 && this.value != "" && this.value != null) {
+					str += this.value + ",";
+				}
+
+			});
+			if(str.length > 10) {
+				$(".search_text").text(str.substring(0, 15) + '...');
+			} else {
+				$(".search_text").text(str);
+			}
+			console.log(Search_date)
+			return false;
+		});
+
+		function loadmore(obj) {
+			$("#load_more_text").text("加载中");
+			$("#load_more_icon").show();
+			loadMoreCase();
+		}
+
+		var tempVue = new Vue({
+			el: '#components-demo',
+			data: {
+				count: [{
+					row1: '1812C2927318',
+					row1Value: '监督员上报',
+					row2: '问题描述:',
+					row2Value: '灵山路1396弄 暴露垃圾堆放多日无人清理...',
+					row3: '上报时间:',
+					row3Value: '2018-12-13 12:34',
+					row4: '要求完成时间:',
+					row4Value: '2018-12-28 12:34',
+					statusText: '',
+					img: ''
+
+				}, {
+					row1: '1812C2927318',
+					row1Value: '监督员上报',
+					row2: '问题描述:',
+					row2Value: '灵山路1396弄 暴露垃圾堆放多日无人清理...',
+					row3: '上报时间:',
+					row3Value: '2018-12-28 12:34',
+					row4: '要求完成时间:',
+					row4Value: '2018-12-28 12:34',
+					statusText: '',
+					img: ''
+
+				}, {
+					row1: '1812C2927318',
+					row1Value: '监督员上报',
+					row2: '问题描述:',
+					row2Value: '灵山路1396弄 暴露垃圾堆放多日无人清理...',
+					row3: '上报时间:',
+					row3Value: '2018-12-28 12:34',
+					row4: '要求完成时间:',
+					row4Value: '2018-12-28 12:34',
+					statusText: '即将超期',
+					img: ''
+
+				}, {
+					row1: '1812C2927318',
+					row1Value: '监督员上报',
+					row2: '问题描述:',
+					row2Value: '灵山路1396弄 暴露垃圾堆放多日无人清理...',
+					row3: '上报时间:',
+					row3Value: '2018-12-28 12:34',
+					row4: '要求完成时间:',
+					row4Value: '2018-12-28 12:34',
+					statusText: '超期案件',
+					img: ''
+
+				}, {
+					row1: '1812C2927318',
+					row1Value: '监督员上报',
+					row2: '问题描述:',
+					row2Value: '灵山路1396弄 暴露垃圾堆放多日无人清理...',
+					row3: '上报时间:',
+					row3Value: '2018-12-28 12:34',
+					row4: '要求完成时间:',
+					row4Value: '2018-12-28 12:34',
+					statusText: '超期案件',
+					img: ''
+
+				}]
+			},
+			methods: {
+				getData: function() {
+					var i = 0;
+					$.each(this.count, function(index, item) {
+						//						console.log(item);
+						$.ajax({
+							type: "GET",
+							url: "../../../data/image.json",
+							data: null,
+							dataType: "json",
+							success: function(data) {
+
+								tempVue.$data.count[index].img = data.img;
+								//								this.count[index].img=data.img;
+								i++;
+							}
+
+						});
+					});
+					console.log(this.count)
+				}
+			},
+			created: function() {
+				//				this.getData();
+			}
+		});
+
+		function loadMoreCase() {
+			var t1 = window.setTimeout(function() {
+				tempVue.$data.count.push({
+					row1: '1812C2927318',
+					row1Value: '监督员上报',
+					row2: '问题描述:',
+					row2Value: '灵山路1396弄 暴露垃圾堆放多日无人清理...',
+					row3: '上报时间:',
+					row3Value: '2018-12-28 12:34',
+					row4: '要求完成时间:',
+					row4Value: '2018-12-28 12:34',
+					statusText: '即将超期'
+
+				});
+				$("#load_more_text").text("点击加载更多");
+				$("#load_more_icon").hide();
+			}, 1000);
+			//				window.clearTimeout(t1);
+		}
+		//传入参数
+		var query = GetRequest();
+		var iconType = (query.iconType == "" || query.iconType == undefined) ? "home" : query.iconType;
+
+		//判断当前处于哪个Navbar
+		var $aNavli = $(".am-navbar-nav li");
+		$aNavli.each(function() {
+			var icon_type = $(this).find('span').attr('icon-type');
+			if(iconType == icon_type) {
+				$(this).addClass('on').siblings().removeClass('on');
+				$(this).find('span').attr('icon-type', icon_type + '_on');
+
+				var $aSpa = $(this).siblings().find('span');
+				$aSpa.each(function() {
+					icon_type = $(this).attr('icon-type');
+					$(this).attr('icon-type', icon_type.replace('_on', ''));
+				})
+			}
+
+		})
+
+		//跳转页面
+		$(".am-navbar-nav li").on('click', function() {
+			var hre_name = $(this).attr('hre-name'); //跳转页面名称
+			console.log('hre_name', hre_name)
+			window.location = hre_name;
+		});
+
+		function GetRequest() {
+			var url = location.search; //获取url中"?"符后的字串   
+			var theRequest = new Object();
+			if(url.indexOf("?") != -1) {
+				var str = url.substr(1);
+				strs = str.split("&");
+				for(var i = 0; i < strs.length; i++) {
+					theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+				}
+			}
+			return theRequest;
+		}
+		$("#search_box").click(function() {
+			$('#my-prompt').modal('open'); //打开窗体
+			BindTime();
+
+		});
+
+		function close_win_search() {
+			$("#my-prompt").modal('close');
+		}
+		//初始化时间工具和下拉框信息
+		function BindTime() {
+			var dates = new Date();
+			var Years = (dates).getFullYear();
+			var Months = (dates).getMonth(); //获取当前月份(0-11,0代表1月)
+
+			var opt = {};
+			opt.date = {
+				preset: 'date'
+			}; //格式：年月日
+			opt.datetime = {
+				preset: 'datetime'
+			}; //格式：年月日时分
+			opt.time = {
+				preset: 'time'
+			}; //格式：时分
+			opt.default = {
+				theme: 'android-ics light', //皮肤样式
+				display: 'model', //显示方式 
+				mode: 'scroller', //日期选择模式
+				dateFormat: 'yyyy-mm-dd', //日期格式
+				lang: 'zh', //语言
+				showNow: false, //是否显示回到今天按钮
+				nowText: "今天",
+				startYear: 1990, //开始年份
+				endYear: 2099, //结束年份
+
+			};
+			$("#Report_TIME_end").mobiscroll($.extend(opt['date'], opt['default']));
+			$('#Report_TIME_end').scroller('setDate', new Date(Years, Months, 1), true);
+			$("#Report_TIME_begin").mobiscroll($.extend(opt['date'], opt['default']));
+			$('#Report_TIME_begin').scroller('setDate', new Date(Years, Months, 1), true);
+			//Operation Lower
+			$("#Operation_TIME_end").mobiscroll($.extend(opt['date'], opt['default']));
+			$('#Operation_TIME_end').scroller('setDate', new Date(Years, Months, 1), true);
+			$("#Operation_TIME_begin").mobiscroll($.extend(opt['date'], opt['default']));
+			$('#Operation_TIME_begin').scroller('setDate', new Date(Years, Months, 1), true);
+			$("#Lower_TIME_end").mobiscroll($.extend(opt['date'], opt['default']));
+			$('#Lower_TIME_end').scroller('setDate', new Date(Years, Months, 1), true);
+			$("#Lower_TIME_begin").mobiscroll($.extend(opt['date'], opt['default']));
+			$('#Lower_TIME_begin').scroller('setDate', new Date(Years, Months, 1), true);
+
+		}
+	</script>
+
+</body>
+
+</html>

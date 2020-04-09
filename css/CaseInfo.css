@@ -1,0 +1,731 @@
+/*详情页样式*/
+
+html,
+body {
+	height: 100%;
+	font-family: "微软雅黑";
+	background-color: #E3F0FE;
+}
+
+li {
+	list-style: none;
+}
+
+
+
+/*************upper*************/
+
+.con-upper {
+	background-color: #67B5FC;
+	padding-bottom: 56px;
+}
+
+.con-upper-1 {
+	background-color: #67B5FC;
+	padding-bottom: 36px;
+}
+.con-upper-2 {
+	background-color: #67B5FC;
+	padding-bottom: 8px;
+}
+.uppers {
+	position: relative;
+	color: #FFFFFF;
+}
+
+.uppers-info {
+	width: 96%;
+	margin: 0 auto;
+	/*margin: 0 20px;*/
+	line-height: 20px;
+	
+}
+
+.uppers-info dt {
+	display: inline-block;
+	position: absolute;
+	z-index: 101;
+	right: 1%;
+	bottom: -22px;
+	margin-top: 0;
+}
+
+.uppers-info dt img {
+	width: 90px;
+	height: 90px;
+}
+
+.uppers-info dd {
+	display: inline-block;
+	/*margin-top: 10px;*/
+}
+
+.uppers-number {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.uppers-txt {
+	font-size: 14px;
+}
+
+.uppers-txt-2 {
+	font-size: 16px;
+}
+
+
+/******menu******/
+
+.uppers-menu {
+	color: #9CC5FF;
+	background-color: #FFFFFF;
+	width: 96%;
+	/*height: 80px;*/
+	height: 72px;
+	margin: 0 auto;
+	margin-top: 12px;
+	/*padding: 12px 0px 10px 12px;*/
+	padding: 10px 0px 10px 12px;
+	position: absolute;
+	left: 2%;
+	overflow: hidden;
+}
+
+.uppers-menu dl {
+	display: inline-block;
+	/*width: 24%;*/
+	width: 18%;
+	text-align: center;
+	margin: 0;
+	opacity: 0.4;
+}
+
+.uppers-menu-2 dl {
+	width: 48%;
+}
+
+.uppers-menu-3 dl {
+	width: 30%;
+}
+.uppers-menu-4 dl {
+	width: 23%;
+}
+
+.uppers-menu dl dt {
+	/*width: 40px;*/
+	width: 32px;
+	margin: 0 auto;
+}
+
+.uppers-menu dl dt img {
+	width: 100%;
+}
+
+.uppers-menu dl dd {
+	margin-top: 0;
+}
+
+.on {
+	opacity: 1 !important;
+}
+
+
+/******menu******/
+
+
+/*************upper*************/
+
+
+/*************lower*************/
+
+.con-lower {
+	padding-top: 37px;
+	padding-bottom: 10px;
+}
+
+.con-lower-1 {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+/*调整自适应beg*/
+
+.lowers {
+	height: 364px;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+
+/*当宽度超过370像素的效果 IPHONE678*/
+
+@media only screen and (min-height:650px) {
+	.lowers {
+		height: 464px;
+		overflow: scroll;
+		overflow-x: hidden;
+	}
+}
+
+
+/*当宽度超过370像素且高度超过700的效果 IPHONE678 PLUS*/
+
+@media only screen and (min-width:390px)and (min-height:700px) {
+	.lowers {
+		height: 530px;
+		overflow: scroll;
+		overflow-x: hidden;
+	}
+}
+
+
+/*当高度超过800像素的效果 IPHONEX */
+
+@media only screen and (min-height:800px) {
+	.lowers {
+		height: 606px;
+		overflow: scroll;
+		overflow-x: hidden;
+	}
+}
+
+
+/*当高度超过800像素的效果  IPAD*/
+
+@media only screen and (min-width:700px)and (min-height:950px) {
+	.lowers {
+		height: 818px;
+		overflow: scroll;
+		overflow-x: hidden;
+	}
+}
+
+
+/*调整自适应end*/
+
+.lower {
+	width: 96%;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	background-color: #FFFFFF;
+	padding: 8px;
+	/*font-size: 14px;*/
+	font-size: 1.8rem;
+}
+
+.lower-title {
+	font-size: 16px;
+	color: #9CC5FF;
+	border-left: 2px solid #9CC5FF;
+	padding-left: 6px;
+	height: 22px;
+	line-height: 22px;
+	margin-bottom: 10px;
+}
+
+.lower ul {
+	padding: 0;
+	margin: 0;
+}
+
+
+/*调整自适应2beg*/
+
+.lower-info {
+	height: 270px;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+
+/*当宽度超过370像素的效果 IPHONE678*/
+
+@media only screen and (min-height:650px) {
+	.lower-info {
+		height: 344px;
+		overflow: scroll;
+		overflow-x: hidden;
+	}
+}
+
+
+/*当高度超过370像素且高度超过700的效果 IPHONE678 PLUS*/
+
+@media only screen and (min-width:390px)and (min-height:700px) {
+	.lower-info {
+		height: 426px;
+		overflow: scroll;
+		overflow-x: hidden;
+	}
+}
+
+
+/*当高度超过800像素的效果 IPHONEX */
+
+@media only screen and (min-height:800px) {
+	.lower-info {
+		height: 510px;
+		overflow: scroll;
+		overflow-x: hidden;
+	}
+}
+
+
+/*当高度超过800像素的效果  IPAD*/
+
+@media only screen and (min-width:700px)and (min-height:950px) {
+	.lower-info {
+		height: 710px;
+		overflow: scroll;
+		overflow-x: hidden;
+	}
+}
+
+
+/*调整自适应2end*/
+
+.CaseImg {
+	clear: both;
+	padding: 0;
+	margin: 0 auto;
+	height: 93px;
+	width: 100%;
+	/*触摸拖动图片*/
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+	display: -webkit-flex;
+}
+
+.CaseImg li {
+	float: left;
+	height: 100%;
+	margin-right: 4px;
+}
+
+.CaseImg li img {
+	width: 82px;
+	height: 100%;
+}
+
+.txt-left {
+	display: inline-block;
+	text-align: right;
+	/*min-width: 80px;
+	width: 23%;*/
+	width: 110px;
+	position: absolute;
+	color: #797979;
+}
+
+.txt-right {
+	display: inline-block;
+	width: 67%;
+	overflow: hidden;
+	margin-left: 116px;
+	color: #333333;
+}
+
+.tag {
+	display: inline-block;
+}
+
+.txt-describe {
+	max-height: 86px;
+}
+
+.CaseInfo {
+	/*margin-bottom: 4px;*/
+	
+}
+
+.CaseInfo li {
+	position: relative;
+}
+
+.CaseInfo li:after {
+	content: "";
+	border-bottom: 1px solid #F2F2F2;
+	color: #F2F2F2;
+	position: absolute;
+	left: 116px;
+	bottom: 2px;
+	height: 1px;
+	width: 67%;
+	overflow: hidden;
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	-webkit-transform: scaleY(0.5);
+	transform: scaleY(0.5);
+}
+
+.txt-yellow {
+	background-color: #FFC963;
+	border-radius: 4px;
+	color: #FFFFFF;
+	padding: 1px 6px;
+	/*margin-left: 14px;*/
+}
+
+.txt-danger {
+	background-color: #dd514c;
+	border-radius: 4px;
+	color: #FFFFFF;
+	padding: 1px 6px;
+	margin-left: 14px;
+}
+
+
+/*********上传照片beg********/
+
+.uploader-input {
+	display: inline-block;
+	max-width: 100px;
+	width: 30%;
+	height: 100px;
+	border: 1px solid #dbdbdb;
+	position: relative;
+	box-sizing: border-box;
+	background-image: url(../images/fileoption.png);
+	background-size: contain;
+	/*60px 60px;*/
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.uploader-input input[type=file] {
+	display: block;
+	opacity: 0;
+	width: 100% !important;
+	height: 100% !important;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.uploader-images {
+	clear: both;
+}
+
+.uploader-images li {
+	float: left;
+	max-width: 100px;
+	width: 30%;
+	height: 100px;
+	margin-right: 4px;
+	list-style: none;
+}
+
+.uploader-images li img {
+	width: 100%;
+	height: 100%;
+}
+
+
+/*图片预览*/
+
+.gallery {
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: #000;
+	z-index: 1000;
+}
+
+.gallery-img {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 60px;
+	left: 0;
+	background: 50% no-repeat;
+	background-size: contain;
+}
+
+.gallery-opr {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: #0d0d0d;
+	color: #fff;
+	line-height: 60px;
+	text-align: center;
+}
+
+.gallery-del {
+	display: block;
+}
+
+.gallery-opr a {
+	text-decoration: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+/*********上传照片end********/
+
+
+/*是否通过TAB*/
+
+.req-ispass {
+	width: 99%;
+	height: 42px;
+	line-height: 42px;
+	margin: 0 auto;
+	border: 1px solid #797979;
+	background-color: #FFFFFF;
+	color: #797979;
+}
+
+.req-ispass span {
+	display: inline-block;
+	width: 50%;
+	height: 99%;
+	float: left;
+	text-align: center;
+	cursor: pointer;
+}
+
+.pass {
+	background-color: #76BFFF;
+	color: #FFFFFF;
+}
+
+
+/*********checkbox***beg******/
+
+.req-checkbox {
+	-webkit-appearance: none;
+	appearance: none;
+	margin-left: 6px !important;
+	margin-top: 0 !important;
+	position: relative;
+	width: 56px !important;
+	height: 34px !important;
+	border: 1px solid #DFDFDF;
+	outline: 0;
+	border-radius: 16px;
+	box-sizing: border-box;
+	background: #DFDFDF;
+	background-color: #DFDFDF;
+	-webkit-transition: background-color 0.1s, border 0.1s;
+	transition: background-color 0.1s, border 0.1s;
+}
+
+.req-checkbox:before {
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 54px;
+	height: 32px;
+	border-radius: 15px;
+	background-color: #FDFDFD;
+	-webkit-transition: -webkit-transform .3s;
+	transition: -webkit-transform .3s;
+	transition: transform .3s;
+	transition: transform .3s, -webkit-transform .3s;
+	-webkit-transition: -webkit-transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+	transition: -webkit-transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+	transition: transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+	transition: transform 0.35s cubic-bezier(0.45, 1, 0.4, 1), -webkit-transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+}
+
+.req-checkbox:after {
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 34px;
+	height: 32px;
+	border-radius: 15px;
+	background-color: #FFFFFF;
+	-webkit-transition: -webkit-transform .3s;
+	transition: -webkit-transform .3s;
+	transition: transform .3s;
+	transition: transform .3s, -webkit-transform .3s;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+	-webkit-transition: -webkit-transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+	transition: -webkit-transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+	transition: transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+	transition: transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35), -webkit-transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+}
+
+.req-checkbox:checked {
+	border-color: #04BE02;
+	background-color: #04BE02;
+}
+
+.req-checkbox:checked:before {
+	-webkit-transform: scale(0);
+	transform: scale(0);
+}
+
+.req-checkbox:checked:after {
+	-webkit-transform: translateX(20px);
+	transform: translateX(20px);
+}
+
+.req-checkbox-group {
+	clear: both;
+	margin: 4px 0;
+	height: 40px;
+	line-height: 40px;
+}
+
+.req-checkbox-group span {
+	float: left;
+	color: #797979;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.req-checkbox-group input {
+	float: right;
+	margin-top: 2px !important;
+}
+
+
+/*********checkbox***end******/
+
+
+/*按钮*/
+
+.lower-btn {
+	width: 96%;
+	margin: 0 auto;
+	margin-top: 6px;
+}
+
+.lower-btn button {
+	border-radius: 6px;
+}
+
+
+/*************lower*************/
+
+
+/*************弹窗*************/
+
+.am-modal-dialog {
+	width: 400px;
+	position: absolute;
+	left: 0;
+	top: 10%;
+}
+
+.am-modal-dialog .lower {
+	width: 98%;
+	margin-bottom: 0;
+}
+
+.am-modal-bd {
+	padding: 15px 0;
+	text-align: initial;
+}
+
+.am-form-group,
+.group {
+	margin-bottom: 0.8rem;
+}
+
+.am-form-group label,
+.am-form-group textarea {
+	width: 100%;
+}
+
+.am-form-group input {
+	width: 100%;
+	height: 37px;
+	line-height: 37px;
+	border: 1px solid transparent;
+	border-color: #e6e6e6;
+}
+
+.req-title {
+	color: #797979;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+
+/*处理时限*/
+
+.am-input-group {
+	color: #797979;
+	height: 66px;
+	margin-bottom: 0;
+}
+
+.wrappers {
+	float: left;
+}
+
+.wrapper {
+	float: left;
+	margin-right: 2px;
+	margin-bottom: 4px;
+}
+
+.req-span {
+	width: 32px;
+	display: inline-block;
+	text-align: center;
+	font-size: 2.2rem;
+	vertical-align: middle;
+	line-height: 0;
+}
+
+
+/*接单备注计数数字*/
+
+.req-txteare-numbr {
+	text-align: right;
+	display: inherit;
+	color: #797979;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+
+/*时间*/
+
+.req-time {
+	position: relative;
+}
+
+.req-time i {
+	position: absolute;
+	right: 4px;
+	top: 37px;
+}
+
+.am-form-icon [class*=am-icon-] {
+	right: .5em;
+	left: auto;
+}
+
+.am-form-group.am-form-icon input {
+	text-indent: 6px;
+}
+
+
+/*(带时间条件时)弹窗样式beg*/
+
+.dwo {
+	/*background: none;*/
+}
+
+.dw-persp {
+	z-index: 1111;
+}
+
+
+/*(带时间条件时)弹窗样式end*/
+
+
+/*************弹窗end*************/

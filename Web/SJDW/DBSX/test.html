@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.head {
+				height: 40px;
+				width: 100%;
+				position: relative;
+				z-index: 110;
+				left: 0px;
+				top: 10px;
+			}
+			
+			.head .btn-2 {
+				display: block;
+				width: 42px;
+				height: 45px;
+				background: url(../../../images/fileoption.png) center no-repeat;
+				background-size: 30px;
+				position: absolute;
+				top: 0px;
+				right: 46px;
+			}
+			
+			.head .btn-2 input {
+				width: 42px;
+				height: 45px;
+				position: absolute;
+				right: 0px;
+				top: 0;
+				opacity: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<input type="number" />
+		<div class="head">
+			<a class="btn-2">
+				<input type="file" accept="image/*" id="upload" name="upload">
+			</a>
+		</div>
+		<div class="photo" id="preview"></div>
+
+	</body>
+
+</html>
+<script src="../../../js/jquery-3.2.1.min.js"></script>
+<script>
+//	var upload = document.getElementById('upload'),
+//		preview = document.getElementById('preview'),
+//		surebtn = document.getElementById('surebtn'),
+		var imgurl = '';
+
+	$("#upload").on('change', function(){
+		window.URL = window.URL || window.webkitURL;
+		var sUserAgent = navigator.userAgent.toLowerCase();
+		var selected_file = this.files[0];
+
+		if(sUserAgent.match(/android/i) == "android") {
+			var img = new Image();
+			img.src = window.URL.createObjectURL(selected_file);
+			preview.innerHTML = '';
+			preview.appendChild(img);
+
+			var reader = new FileReader();
+			reader.onload = function(e) {
+				imgurl = e.target.result;
+			};
+			reader.readAsDataURL(selected_file);
+
+		} else {
+
+			//判断文件类型是否为图片
+			var imageType = /image.*/;
+
+			if(!selected_file.type.match(imageType)) {
+				return false;
+			}
+
+			var img = document.createElement('img');
+			img.file = selected_file;
+			preview.innerHTML = '';
+			preview.appendChild(img);
+
+			img.onload = function() {
+				imgurl = img.src;
+			}
+
+			var reader = new FileReader();
+			reader.onload = function(e) {
+				img.src = e.target.result;
+			};
+			reader.readAsDataURL(selected_file);
+		}
+	});
+	//surebtn.on('click', upLoadFile, false);
+
+	function handleFile() {
+		
+	}
+
+	function upLoadFile() {
+		var start = imgurl.indexOf(',') + 1;
+		dataurl = imgurl.substr(start);
+
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.open('post', 'todo.php', true);
+		xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
+		xmlhttp.setRequestHeader('X_Requested-With', 'XMLHttpRequest');
+		xmlhttp.send('dataurl=' + encodeURIComponent(dataurl));
+
+		xmlhttp.onreadystatechange = function() {
+			if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+				console.log(xmlhttp.responseText)
+			}
+		}
+	}
+</script>

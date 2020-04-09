@@ -1,0 +1,25 @@
+
+/*--顶部导航样式--*/
+.am-header{
+	height: 40px;
+	line-height: 40px;
+}
+.am-header .am-header-left{
+	left: 0;
+}
+.am-header-default .am-header-nav {
+	margin-top: 2px;
+}
+
+.am-header-default {
+	background-color: #67B5FC;
+	color: #FFFFFF;
+}
+
+.am-header .am-header-title {
+	margin: 0 20%;
+}
+
+.am-header-title a {
+	font-size: 21px;
+}

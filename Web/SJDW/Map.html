@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>催办</title>
+
+		<!-- Set render engine for 360 browser -->
+		<meta name="renderer" content="webkit">
+
+		<!-- No Baidu Siteapp-->
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+		<!--<link rel="icon" type="image/png" href="assets/i/favicon.png">-->
+
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<!--<link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">-->
+
+		<!-- Add to homescreen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+		<!--<link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">-->
+
+		<!-- Tile icon for Win8 (144x144 + tile color) -->
+		<!--<meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">-->
+		<meta name="msapplication-TileColor" content="#0e90d2">
+
+		<link rel="stylesheet" href="../../assets/css/amazeui.min.css">
+		<link rel="stylesheet" href="../../assets/css/app.css">
+		<link href="../../mobiscrollDate/css/mobiscroll_date.css" rel="stylesheet" />
+
+		<link rel="stylesheet" href="../../css/header.css">
+		<link rel="stylesheet" href="../../css/CaseInfo.css">
+		<link rel="stylesheet" href="../../css/map.css">
+
+	</head>
+
+	<body>
+		<div class="con">
+			<div class="map_model">
+				<!--地图信息-->
+				<div class="lower ">
+					<div class="lower-title">地图信息<span class="close"></span></div>
+					<div class="map-Tips">
+						<span class="map-location"><img src="../../images/map_location.png"></span>
+						<label class="req-title" for="JD_REMARK">地图定位</label>
+						<span>仅供参考，不覆盖您输入的地址</span>
+					</div>
+					<div class="am-form-group">
+						<div class="map-content">
+							<input type="text" id="txt_searchaddress" readonly disabled/>
+						</div>
+						<div id="container">
+
+						</div>
+					</div>
+					
+					<input type="hidden" id="hd_mapx" />
+					<input type="hidden" id="hd_mapy" />
+					<input type="hidden" id="hd_map_pic" />
+				</div>
+
+				<div class="lower-btn">
+					<button type="button" id="Close" class="am-btn am-btn-secondary am-btn-block">关 闭</button>
+				</div>
+				
+			</div>
+		</div>
+
+	</body>
+	<script src="../../js/jquery-3.2.1.min.js"></script>
+	<script src="../../assets/js/amazeui.min.js"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=hMxwGeMj4ddWIaH0lSbGNSpIwaF9mQju"></script>
+	<script src="../../js/map.js"></script>
+	<script>
+		(function() {
+			init();
+
+			function init() {
+
+				MapInit();//初始化地图
+				getPoint('闻喜路1000弄1号504');//解析地址到地图上并调整地图视野
+				MapClose();//地图关闭操作
+			
+			}
+
+		})(window);
+	</script>
+
+</html>

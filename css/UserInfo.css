@@ -1,0 +1,186 @@
+html,
+body {
+	height: 100%;
+	font-family: "微软雅黑";
+	background-color: #E3F0FE;
+}
+
+li {
+	list-style: none;
+}
+
+
+/*************upper*************/
+
+.con-upper {
+	background-color: #67B5FC;
+	padding-bottom: 56px;
+}
+
+.uppers {
+	position: relative;
+	/*padding-bottom: 50px;*/
+	padding-bottom: 20px;
+	
+}
+
+.UserInfo {
+	text-align: center;
+	background-color: #FFFFFF;
+	width: 96%;
+	margin: 0 auto;
+	border-radius: 6px;
+	/*margin-top: 60px;*/
+	margin-top: 30px;
+	
+	height: 90px;
+	position: absolute;
+	left: 2%;
+}
+
+.user-img {
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	border: 4px solid #FFFFFF;
+	background-color: #999999;
+	margin: 0 auto;
+	position: relative;
+	top: -50px;
+}
+
+.user-img img {
+	width: 100%;
+	height: 100%;
+}
+
+.user-name {
+	color: #9CC5FF;
+	font-weight: bold;
+	font-size: 18px;
+	position: relative;
+	top: -60px;
+	
+	height: 28px;
+	line-height: 28px;
+}
+
+.user-address {
+	font-size: 14px;
+	color: #797979;
+	margin-top: .5em;
+	position: relative;
+	top: -70px;
+}
+
+.user-marsk {
+	background-color: #67B5FC;
+	height: 91px;
+	position: absolute;
+	left: 2%;
+	top: 91px;
+}
+
+.con-lower {
+	padding-top: 52px;
+	padding-bottom: 10px;
+}
+
+.lower {
+	width: 96%;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	background-color: #FFFFFF;
+	padding: 8px;
+	font-size: 1.8rem;
+}
+
+.lower-title {
+	font-size: 16px;
+	color: #9CC5FF;
+	border-left: 2px solid #9CC5FF;
+	padding-left: 6px;
+	height: 22px;
+	line-height: 22px;
+	margin-bottom: 10px;
+}
+
+.lower ul {
+	padding: 0;
+	margin: 0;
+}
+
+.txt-left {
+	display: inline-block;
+	text-align: right;
+	/*min-width: 80px;
+	width: 23%;*/
+	width: 80px;
+	position: absolute;
+	color: #797979;
+	font-size: 14px;
+	
+}
+
+.txt-right {
+	display: inline-block;
+	width: 71%;
+	overflow: hidden;
+	margin-left: 86px;
+	color: #333333;
+	font-size: 14px;
+	
+}
+
+.txt-describe {
+	max-height: 86px;
+}
+
+.CaseInfo {
+	/*margin-bottom: 4px;*/
+	overflow-x: hidden;
+}
+
+.CaseInfo li {
+	position: relative;
+}
+
+.CaseInfo li:after {
+	content: "";
+	border-bottom: 1px solid #F2F2F2;
+	color: #F2F2F2;
+	position: absolute;
+	left: 86px;
+	bottom: 2px;
+	height: 1px;
+	width: 71%;
+	overflow-x: hidden;
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	-webkit-transform: scaleY(0.5);
+	transform: scaleY(0.5);
+}
+
+
+/*按钮*/
+
+.lower-btn {
+	width: 96%;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.lower-btn button {
+	border-radius: 6px;
+}
+
+@media only screen and (max-height:650px) {
+	.CaseInfo {
+		/*height: 240px;
+		overflow: scroll;
+		overflow-x: hidden;*/
+	}
+	.lower-btn  {
+		margin-top: 10px;
+	}
+}

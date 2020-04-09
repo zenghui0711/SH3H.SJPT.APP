@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>个人信息</title>
+
+		<!-- Set render engine for 360 browser -->
+		<meta name="renderer" content="webkit">
+
+		<!-- No Baidu Siteapp-->
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+		<!--<link rel="icon" type="image/png" href="assets/i/favicon.png">-->
+
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<!--<link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">-->
+
+		<!-- Add to homescreen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+		<!--<link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">-->
+
+		<!-- Tile icon for Win8 (144x144 + tile color) -->
+		<!--<meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">-->
+		<meta name="msapplication-TileColor" content="#0e90d2">
+
+		<link rel="stylesheet" href="../assets/css/amazeui.min.css">
+		<link rel="stylesheet" href="../assets/css/app.css">
+		<link href="../mobiscrollDate/css/mobiscroll_date.css" rel="stylesheet" />
+
+		<link rel="stylesheet" href="../css/header.css">
+		<link rel="stylesheet" href="../css/UserInfo.css">
+		<link rel="stylesheet" href="../css/sy_navbar.css">
+
+		<style>
+			
+
+		</style>
+
+	</head>
+
+	<body>
+		<div class="con" id="Navbar" v-cloak>
+			<div class="con-upper">
+				<header data-am-widget="header" class="am-header am-header-default">
+					<!--<div class="am-header-left am-header-nav">
+						<a href="javascript:;" class="leftlink">
+							<span class="am-icon-chevron-left am-icon-sm"></span>
+						</a>
+					</div>-->
+					<!--<h1 class="am-header-title">
+				        <a href="javascript:;" class="titlelink">
+				        	我
+				        </a>
+				    </h1>-->
+					<!--<div class="am-header-right am-header-nav">
+						<a href="javascript:;" class="rightlink">
+							<i class="am-header-icon am-icon-bars"></i>
+						</a>
+					</div>-->
+				</header>
+				<div class="uppers">
+					<dl class="UserInfo">
+						<dt class="user-img"><img id="head_portrait" :src="User.head_portrait"></dt>
+						<dd class="user-name"><span id="acc_username" >{{User.acc_username}}</span></dd>
+						<dd class="user-address"><span id="loca_address">{{User.loca_address}}</span></dd>
+					</dl>
+				</div>
+
+			</div>
+			<div class="con-lower lower-userinfo">
+				<div class="lowers">
+
+					<!--个人信息-->
+					<div class="lower">
+						<div class="lower-title">个人信息</div>
+						<ul class="CaseInfo">
+							<li>
+								<div class="txt-left">账号</div>
+								<div class="txt-right"><span id="acc_number">{{User.acc_number}}</span></div>
+							</li>
+							<li>
+								<div class="txt-left">联系电话</div>
+								<div class="txt-right"><span id="telephone">{{User.telephone}}</span></div>
+							</li>
+							<li>
+								<div class="txt-left">性别</div>
+								<div class="txt-right"><span id="sex">{{User.sex}}</span></div>
+							</li>
+							<li>
+								<div class="txt-left">职位</div>
+								<div class="txt-right"><span id="dept">{{User.dept}}</span></div>
+							</li>
+							<li>
+								<div class="txt-left">所属区县</div>
+								<div class="txt-right"><span id="area">{{User.area}}</span></div>
+							</li>
+							<li>
+								<div class="txt-left">所属街道</div>
+								<div class="txt-right"><span id="street">{{User.street}}</span></div>
+							</li>
+							<li>
+								<div class="txt-left">联系地址</div>
+								<div class="txt-right"><span id="address">{{User.address}}</span></div>
+							</li>
+							<li>
+								<div class="txt-left">邮箱</div>
+								<div class="txt-right"><span id="email">{{User.email}}</span></div>
+							</li>
+						</ul>
+
+					</div>
+
+					<div class="lower-btn">
+						<button type="button" id="btn_Update" class="am-btn am-btn-secondary am-btn-block">修 改</button>
+					</div>
+				</div>
+			</div>
+
+			<Navbar :active="active"></Navbar>
+			
+
+		</div>
+	</body>
+
+	<!--<script src="../js/jquery-3.2.1.min.js"></script>-->
+	<script src="../js/jquery-1.11.3.min.js"></script>
+	<script src="../assets/js/amazeui.min.js"></script>
+	<script src="../js/public.js?V=0.1"></script>
+
+	<!--vue.js-->
+	<script src="../js/vue.min.js"></script>
+	<script src="../Components/Navbar.js"></script>
+	<script>
+		
+			
+		(function() {　
+			
+			var demo=new Vue({
+				el: '#Navbar',
+				data: {
+					User:{},
+					active: window.GetRequest().iconType == undefined ? "me" : window.GetRequest().iconType
+				}
+			});
+	
+			 
+			$(window).load(function() {
+				headerLink();//注册导航跳转
+				
+				init()　　
+			});
+
+			function init() {
+				demo.$data.User={
+						head_portrait:"../images/me_on_1.png",
+						acc_username:"123",
+						loca_address:"上海财经大学金融谷",
+						acc_number:"user1",
+						telephone:"15912345678",
+						sex:"男",
+						dept:"居委会主任",
+						area:"闵行",
+						street:"颛桥镇",
+						address:"光中路696号",
+						email:"zenghui@shanghai3h.com",
+				};
+				
+				$("#btn_Update").on('click', function() {
+					//跳转修改个人信息界面
+					window.location="UpdateUserInfo.html";
+				})
+				
+				
+			}
+			
+			
+		})(window);
+	</script>
+
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+		<title>地图</title>
+		<link href="wechatBMap.css" rel="stylesheet" />
+		<style>
+			.testContent {
+				width: 98%;
+				margin: 5px auto;
+			}
+			
+			.saveContent {
+				word-wrap: break-word;
+				color: #797979;
+				font-size: 14px;
+				width: 93%;
+				margin: 0 auto;
+			}
+			
+			p {
+				margin: 4px 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--闻喜路1000弄1号504-->
+		<div class="testContent">
+			<input type="text" id="address" value="" style="margin-left: 10px;" />
+			<input type="button" value="打开地图" id="mapinfo" data-show="no" />
+			<input type="button" value="保存" id="Save" />
+		</div>
+		<div class="saveContent" style=""></div>
+	</body>
+
+</html>
+<script src="jquery-1.11.3.min.js"></script>
+<script src="coordinateTransformation.js"></script>
+<script src="wechatBMap.js"></script>
+<script>
+	var myGeo = null;
+	SH3H.WechatBMap.init(null, function(map, option) {
+		console.log('map', map)
+		console.log('option', option)
+		var _BMapFun = new BMapFun(map);
+
+		_BMapFun.helper.dragend(); //注册事件：拖拽地图时获取地图中心点并更新marker坐标
+		myGeo = new BMap.Geocoder(); //创建一个地址解析器的实例
+		_BMapFun.helper.MapClick(); //注册地图点击事件
+
+		//_BMapFun.helper.MapInit(); //初始化地图
+		//SH3H.WechatBMap.showBMap();
+		$("#mapinfo").on('click',
+			function() {
+				SH3H.WechatBMap.showBMap();
+
+				var address = $("#address").val();
+				if(address != "请输入详细的事发地址:(如:人民北路100号(弄)或人民路中山路路口往东100米)" && address != "" && address != undefined) {
+					// 对指定的地址进行解析，将地址解析结果显示在地图上,并调整地图视野
+					myGeo.getPoint(address, function(point) {
+						if(point) {
+							console.log('getPoint', point)
+							
+							_BMapFun.helper.setCenter(point);
+							_BMapFun.helper.addOverlay(['Marker', point]); //更新marker坐标
+							$("#" + SH3H.WechatBMap.domIds.input_domId).val(address);
+							SH3H.WechatBMap.ImgUrl(point.lng, point.lat);
+							
+						} else {
+							//alert("您选择地址没有解析到结果!");
+						}
+					}, "上海市");
+				} else {
+
+					/************************测试用************************/
+					_BMapFun.helper.Exchange(121.45742, 31.314412);
+					/************************测试用************************/
+
+					/************************正式用************************/
+					//				wx.getLocation({
+					//					type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+					//					success: function(res) {
+					//						//var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+					//						//var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+					//						Exchange(res.longitude, res.latitude);
+					//						_BMapFun.helper.Exchange(res.longitude, res.latitude);
+					//					}
+					//				});
+					/************************正式用************************/
+				}
+
+			});
+
+		SH3H.WechatBMap.saveAddress(function() {
+			var address = $("#address").val();
+			if(address == "请输入详细的事发地址:(如:人民北路100号(弄)或人民路中山路路口往东100米)" || address == "") {}
+			$("#address").val($("#" + SH3H.WechatBMap.domIds.input_domId).val());
+			SH3H.WechatBMap.hideBMap();
+		});
+
+		$("#Save").on('click', function() {
+			console.log('SAVE')
+
+			var address = $("#address").val();
+			_BMapFun.helper.AddressCheck(address, function(mState) {
+				console.log('mState', mState)
+
+				var s = [];
+				var x = $("#" + SH3H.WechatBMap.domIds.inputX_domId).val();
+				var y = $("#" + SH3H.WechatBMap.domIds.inputY_domId).val();
+				var bd09togcj02 = coordtransform.bd09togcj02(parseFloat(x), parseFloat(y));
+				var gcj02towgs84 = coordtransform.gcj02towgs84(parseFloat(bd09togcj02[0]), parseFloat(bd09togcj02[1]));
+				s.push("<p>地理经度 lng：" + x + "</p>");
+				s.push("<p>地理纬度 lat：" + y + "</p>");
+				s.push("<p>wgs84 lng：" + gcj02towgs84[0] + "</p>");
+				s.push("<p>wgs84 lat：" + gcj02towgs84[1] + "</p>");
+				s.push("<p>定位地址：" + address + "</p>");
+				s.push("<img src='" + SH3H.WechatBMap.MapImg(x, y) + "' />");
+				$(".saveContent").html(s.join('<br/>'));
+			})
+
+		});
+
+	});
+
+	function BMapFun(map) {
+		this.helper = {
+			MapInit: function() {
+				var option = {
+					x: 121.491,
+					y: 31.233,
+					zoom: 17,
+				};
+
+				var _point = new BMap.Point(option.x, option.y);
+				map.centerAndZoom(_point, option.zoom);
+			},
+			addOverlay: function(data, callback) {
+				//向地图添加覆盖物  data=[OverlayType, point]
+				console.log('addOverlay', data)
+
+				var OverlayType = data[0] || undefined;
+				var point = data[1] || undefined;
+				switch(String(OverlayType)) {
+					case "Marker":
+						map.clearOverlays();
+						map.addOverlay(new BMap.Marker(point || map.getCenter())); // 创建标注并将标注添加到地图中 
+						if(callback) {
+							callback()
+						}
+						break;
+					default:
+						break;
+				}
+			},
+			setCenter: function(point, callback) {
+				var center = map.getCenter(); //获取地图中心点位
+				map.panTo(point || center);
+				map.setCenter(point || center);
+				if(callback) {
+					callback()
+				}
+			},
+			dragend: function() {
+				//dragend:停止拖拽地图时触发
+
+				var _that = this;
+				map.addEventListener("dragend", function() {
+					var center = map.getCenter(); //获取地图中心点
+					_that.setCenter(center); //调整地图中心点位
+					_that.addOverlay(['Marker', center]); //更新marker坐标
+
+					//根据中心点位、半径与检索词发起周边检索
+					_that.searchNearby(map.getCenter(), function(data, ele) {
+						var _point = new BMap.Point(data.lng, data.lat)
+
+						map.setCenter(_point);//调整地图中心点位
+						_that.addOverlay(['Marker', _point]); //点击检索列表时更新marker坐标
+						$("#" + SH3H.WechatBMap.domIds.input_domId).val(data.address);
+						SH3H.WechatBMap.ImgUrl(data.lng, data.lat);
+						//_that.getLocation(_point, function() {});
+					});
+
+				});
+			},
+			getLocation: function(_point, callback) {
+				var _that = this;
+				myGeo.getLocation(_point, function(data) {
+					console.log('getLocation', data)
+
+					map.setCenter(_point);
+					_that.addOverlay(['Marker', _point]); //更新marker坐标
+					var addComp = data.addressComponents;
+					$("#" + SH3H.WechatBMap.domIds.input_domId).val(addComp.province + addComp.city + addComp.district + addComp.street + addComp.streetNumber);
+					SH3H.WechatBMap.ImgUrl(_point.lng, _point.lat);
+
+					if(callback) {
+						callback(data)
+					}
+				});
+			},
+			Exchange: function(x, y) {
+				var _that = this;
+
+				//SH3H.WechatBMap.convertor(116.32715863448607, 39.990912172420714);
+				//SH3H.WechatBMap.geocoderApi(114.21892734521,29.575429778924);
+				//SH3H.WechatBMap.geoconvApi(116.32715863448607, 39.990912172420714);
+				SH3H.WechatBMap.geoconvApi(x, y, function(rs) {
+					if(rs.status === 0) {
+						var _point = new BMap.Point(rs.result[0].x, rs.result[0].y);
+						_that.getLocation(_point, function() {});
+					}
+				});
+
+			},
+			MapClick: function(callback) {
+				var _that = this;
+				map.addEventListener("click", function(e) {
+					console.log('click', e)
+					if(!e.overlay) {
+						//点击底图
+						var pt = e.point;
+						if(pt) {
+							_that.setCenter(pt); //调整地图中心点位
+							_that.addOverlay(['Marker', pt]); //更新marker坐标
+						}
+						myGeo.getLocation(pt, function(rs) {
+							var addComp = rs.addressComponents;
+							$("#" + SH3H.WechatBMap.domIds.input_domId).val(addComp.province + addComp.city + addComp.district + addComp.street + addComp.streetNumber);
+							SH3H.WechatBMap.ImgUrl(pt.lng, pt.lat);
+						});
+					} else {
+						//点击覆盖物
+
+					}
+
+					if(callback) {
+						callback();
+					}
+				});
+			},
+			searchNearby: function(point, callback) {
+				//根据中心点位、半径与检索词发起周边检索
+				var options = {
+					onSearchComplete: function(results) {
+						console.log('results', results)
+						// 判断状态是否正确
+						if(local.getStatus() == BMAP_STATUS_SUCCESS) {
+							console.log('local.getStatus()', local.getStatus())
+							var s = [];
+							$(results).each(function(index, item) {
+								var anArry = item.getCurrentNumPois();
+
+								$(anArry).each(function(i, obj) {
+									var anObj = item.getPoi(i);
+									console.log('anObj', anObj)
+									var _html = '<li class="" data-point="' + anObj.point.lng + ',' + anObj.point.lat + '">' +
+										anObj.address +
+										'</li>'
+									s.push(_html);
+								});
+							});
+							document.getElementById(SH3H.WechatBMap.domIds.search_domId).innerHTML = "<ul>" + s.join("") + "</ul>";
+
+							//注册检索面板点击事件
+							$(document).on("click", "#" + SH3H.WechatBMap.domIds.search_domId + " li", function() {
+								var data_point = $(this).attr('data-point').split(',');
+								$(this).addClass('active').siblings().removeClass('active');
+								var data = {
+									lng: data_point[0],
+									lat: data_point[1],
+									address: $(this).text()
+								}
+								if(callback) {
+									callback(data, $(this));
+								}
+							});
+							document.getElementById(SH3H.WechatBMap.domIds.search_domId).style.display = "inline"; //隐藏地图检索容器
+
+						} else {
+							document.getElementById(SH3H.WechatBMap.domIds.search_domId).innerHTML = "<ul></ul>";
+							document.getElementById(SH3H.WechatBMap.domIds.search_domId).style.display = "none"; //隐藏地图检索容器
+						}
+					}
+				};
+
+				var myKeys = ["美食", "酒店", "购物", "旅游景点", "休闲娱乐", "运动健身", "医疗", "交通设施", "房地产", "公司企业"];
+				//"美食", "酒店", "购物", "生活服务", "丽人", "旅游景点", "休闲娱乐","运动健身","教育培训","文化传媒","医疗","汽车服务","交通设施","金融","房地产","公司企业","政府机构","出入口","自然地物"
+				var local = new BMap.LocalSearch(point, options);
+				local.searchNearby(myKeys, point, 50); //以point为中心50米范围内搜索含有关键词key的地点
+			},
+			AddressCheck: function(address, callback) {
+				var _that = this;
+
+				var searchAddress = $("#" + SH3H.WechatBMap.domIds.input_domId).val();
+				if(searchAddress == "") {
+					//没有定位提交时定位一次:mState=0
+
+					myGeo.getPoint(address, function(point) {
+						if(point) {
+							map.centerAndZoom(point, 17);
+							_that.addOverlay(['Marker', point]); //更新marker坐标
+							SH3H.WechatBMap.ImgUrl(point.lng, point.lat);
+							if(callback) {
+								callback(0)
+							}
+
+						} else {
+							//alert("您选择地址没有解析到结果!");
+						}
+					}, "上海市");
+				} else if(address != searchAddress) {
+					//输入的地址与定位地址不符,是否替换
+
+					//是:mState=1
+					$("#address").val(searchAddress);
+					if(callback) {
+						callback(1)
+					}
+
+					//否:mState=2
+					//					myGeo.getPoint(address, function(point) {
+					//						if(point) {
+					//							map.centerAndZoom(point, 17);
+					//							_that.addOverlay(['Marker', point]); //更新marker坐标
+					//							SH3H.WechatBMap.ImgUrl(point.lng, point.lat);
+					//							if(callback){
+					//								callback(2)
+					//							}
+					//							
+					//						} else {
+					//							//alert("您选择地址没有解析到结果!");
+					//						}
+					//					}, "上海市");
+
+				} else {
+					//地址验证通过:mState=3
+					if(callback) {
+						callback(3)
+					}
+				}
+			},
+		}
+	}
+</script>

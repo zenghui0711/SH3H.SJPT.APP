@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>设置</title>
+
+		<!-- Set render engine for 360 browser -->
+		<meta name="renderer" content="webkit">
+
+		<!-- No Baidu Siteapp-->
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+		<!--<link rel="icon" type="image/png" href="assets/i/favicon.png">-->
+
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<!--<link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">-->
+
+		<!-- Add to homescreen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+		<!--<link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">-->
+
+		<!-- Tile icon for Win8 (144x144 + tile color) -->
+		<!--<meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">-->
+		<meta name="msapplication-TileColor" content="#0e90d2">
+
+		<link rel="stylesheet" href="../assets/css/amazeui.min.css">
+		<link rel="stylesheet" href="../assets/css/app.css">
+
+		<link rel="stylesheet" href="../css/header.css">
+		<link rel="stylesheet" href="../css/SetUp.css">
+		<style>
+
+		</style>
+	</head>
+
+	<body>
+		<div class="con">
+			<div class="con-upper">
+				<header data-am-widget="header" class="am-header am-header-default">
+					<div class="am-header-left am-header-nav">
+						<a href="javascript:;" class="leftlink">
+							<span class="am-icon-chevron-left am-icon-sm"></span>
+						</a>
+					</div>
+					<h1 class="am-header-title">
+				        <a href="javascript:;" class="titlelink">
+				        	设置
+				        </a>
+				    </h1>
+					<!--<div class="am-header-right am-header-nav">
+						<a href="javascript:;" class="rightlink">
+							<i class="am-header-icon am-icon-bars"></i>
+						</a>
+					</div>-->
+				</header>
+			</div>
+			<div class="con-lower">
+				<div class="lowers">
+					<!--密码修改-->
+					<div class="lower">
+						<input type="text" id="mima" readonly placeholder="密码">
+					</div>
+
+					<!-- 联系电话-->
+					<div class="lower">
+						<input type="text" id="telNum" readonly placeholder="联系电话">
+					</div>
+
+					<!--界面设置-->
+					<div class="lower">
+						<input type="text" id="jiemian" readonly placeholder="界面设置" />
+					</div>
+
+					<!-- 版本号-->
+					<div class="lower">
+						<input type="text" id="banben" readonly placeholder="版本号">
+					</div>
+
+					<div class="lower-btn">
+						<button type="button" id="SaveExit" class="am-btn am-btn-danger am-btn-block">退出</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--弹窗内容-->
+		<form class="am-form" id="form_model">
+
+			<!--密码修改-->
+			<div class="am-popup" id="mima-popup">
+				<div class="am-popup-inner">
+					<div class="am-popup-hd">
+						<header class="am-header am-header-default">
+							<h4 class="am-header-title">
+								<a href="javascript:;" class="">密码修改</a>
+							</h4>
+						</header>
+						<span data-am-modal-close class="am-close">&times;</span>
+					</div>
+					<div class="am-popup-bd">
+						<div class="lower">
+							<div class="lower-title">密码修改</div>
+
+							<!--新密码-->
+							<div class="am-form-group">
+								<label class="req-title" for="password1">新密码</label>
+								<input id="password1" type="text" minlength="6" data-validation-message="密码应不小于6个字符" required>
+							</div>
+
+							<!--确认密码-->
+							<div class="am-form-group">
+								<label class="req-title" for="password2">确认密码</label>
+								<input id="password2" type="text" data-validation-message="两次输入不同，请重新输入" data-equal-to="#password1" required>
+							</div>
+
+						</div>
+
+						<div class="lower-btn">
+							<button type="submit" class="am-btn am-btn-secondary am-btn-block">确 定</button>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<!--联系电话修改-->
+			<div class="am-popup" id="dianhua-popup">
+				<div class="am-popup-inner">
+					<div class="am-popup-hd">
+						<header class="am-header am-header-default">
+							<h4 class="am-header-title">
+								<a href="javascript:;" class="">联系电话修改</a>
+							</h4>
+						</header>
+						<span data-am-modal-close class="am-close">&times;</span>
+					</div>
+					<div class="am-popup-bd">
+						<div class="lower">
+							<div class="lower-title">联系电话修改</div>
+
+							<!--联系电话-->
+							<div class="am-form-group">
+								<label class="req-title" for="telephone">联系电话</label>
+								<input id="telephone" type="text" data-validation-message="请输入联系电话" required>
+							</div>
+
+						</div>
+
+						<div class="lower-btn">
+							<button type="submit" class="am-btn am-btn-secondary am-btn-block">确 定</button>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			
+			<!--界面设置-->
+			<div class="am-popup" id="jiemian-popup">
+				<div class="am-popup-inner">
+					<div class="am-popup-hd" >
+						<header data-am-widget="header" class="am-header am-header-default" >
+							<h4 class="am-header-title" >
+							<a href="javascript:;" class="">界面设置</a>
+						</h4>
+						</header>
+						<span data-am-modal-close class="am-close" >&times;</span>
+					</div>
+					<div class="am-popup-bd" >
+						<div class="lower" >
+							<div class="lower-title">  界面设置</div>
+							<div>
+								<table class="am-table am-table-bordered am-table-centered">
+									<td rowspan="2" class="am-text-middle">
+										<img class="am-radius" src="SJPT/img/TU1.png" width="98%" height="120" />
+									</td>
+									<td>
+										<img class="am-radius" src="SJPT/img/TU2.png" width="98%" height="60" />
+									</td>
+									</tr>
+									<tr>
+										<td>
+											<img class="am-radius" src="SJPT/img/TU2.png" width="98%" height="60" />
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div id="demo" class="am-btn-group am-btn-group-justify doc-js-btn-1" data-am-button>
+
+								<label data-val="大图模式" class=" am-btn am-btn-secondary am-active button1 needsclick">
+			                      	<input type="radio"  name="PictureMode" value="大图模式" checked="checked"> 大图模式 
+			                    </label>
+								<label data-val="小图模式" class="am-btn am-btn-secondary button1 needsclick">
+			                      	<input type="radio"  name="PictureMode" value="小图模式"> 小图模式
+			                    </label>
+							</div>
+						</div>
+						<div class="lower-btn">
+							<button type="button" id="SaveJiemian" class="am-btn am-btn-secondary am-btn-block">确 定</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!--版本信息-->
+			<div class="am-popup" id="vision-popup">
+				<div class="am-popup-inner">
+					<div class="am-popup-hd">
+						<header data-am-widget="header" class="am-header am-header-default">
+							<h4 class="am-header-title">
+							<a href="JavaScript:;">版本信息</a>
+						</h4>
+						</header>
+						<span data-am-modal-close class="am-close">&times;</span>
+					</div>
+					<div class="am-popup-bd">
+						<div class="lower">
+							<div class="lower-title">版本信息</div>
+							<ul class="CaseInfo">
+								<li>
+									<div class="txt-left">本机版本</div>
+									<div class="txt-right">V1.0.0</div>
+								</li>
+								<li class="refresh-li">
+									<div class="txt-left">最新版本</div>
+									<div class="txt-right">
+										<span id="refresh_val">V1.1.2</span>
+										<i class="am-icon-refresh req-refresh" id="refresh"></i>
+									</div>
+								</li>
+								<li>
+									<div class="txt-left">调整内容</div>
+									<div class="txt-right txt-describe">Pellentesque iaculis, augue eu bibendum posuere, erat orci vestibulum mi, id tempor augue enim ut sapien. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris scelerisque orci sed sapien vulputate aliquam. Sed volutpat maximus libero eget porttitor. Ut a massa porta, dapibus justo sed, varius sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent neque arcu, aliquam ut eros sollicitudin, fermentum venenatis risus. Vestibulum eleifend ligula a odio tristique, et molestie lacus pretium. Etiam tempus ornare eros vel pharetra. Pellentesque in felis quam. In risus justo, congue ut quam vel, dictum dapibus nunc.</div>
+								</li>
+
+							</ul>
+
+						</div>
+						<div class="lower-btn">
+							<button data-am-modal-close type="submit" id="Savevision" class="am-btn am-btn-secondary am-btn-block">确 定</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		</form>
+	</body>
+	<script src="../js/jquery-3.2.1.min.js"></script>
+	<script src="../assets/js/amazeui.min.js"></script>
+	<script src="../js/public.js"></script>
+	
+	<script>
+		(function() {
+			init();
+
+			function init() {
+				headerLink();//注册导航跳转
+				popup();//相关操作弹窗
+			}
+
+			function popup() {
+				
+				//打开密码信息
+				$('#mima').on('click', function() {
+					$('#mima-popup').modal('open'); //打开窗体
+					valid('password')
+				});
+				
+				//打开联系电话信息
+				$('#telNum').on('click', function() {
+					$('#dianhua-popup').modal('open'); //打开窗体
+					valid('telephone')
+				});
+				
+				//打开界面信息
+				$('#jiemian').on('click', function() {
+					$('#jiemian-popup').modal('open'); //打开窗体
+					
+				});
+				
+				//提交界面大小图切换信息
+				$('#SaveJiemian').on('click', function() {
+					SaveJiemian();
+				});
+				
+				//打开版本信息
+				$('#banben').on('click', function() {
+					$('#vision-popup').modal('open');//打开窗体
+
+				});
+				
+				//提交版本刷新
+				$("#refresh").on('click',function(){
+					$(this).addClass('am-icon-spin');
+					save_refresh();
+				})
+				
+				
+				//退出
+				$("#SaveExit").on('click',function(){
+					window.location="SJDW/SY.html";
+				})
+				
+			}
+
+			function valid(btnType) {
+				$('#form_model').validator({
+					onValid: function(validity) {
+
+						var $field = $(validity.field);
+						$(validity.field).closest('.am-form-group').find('.am-alert').hide();
+
+					},
+
+					onInValid: function(validity) {
+
+						var $field = $(validity.field);
+						var $group = $field.closest('.am-form-group');
+						var $alert = $group.find('.am-alert');
+
+						// 使用自定义的提示信息 或 插件内置的提示信息
+						var msg = $field.data('validationMessage') || this.getValidationMessage(validity);
+
+						if(!$alert.length) {
+							$alert = $('<div class="am-alert am-alert-danger"></div>').hide().
+							appendTo($group);
+
+						}
+
+						$alert.html(msg).show();
+
+					},
+					submit: function() {
+						var formValidity = this.isFormValid();
+						console.warn('验证状态：', formValidity ? '通过' : '未通过');
+
+						if(formValidity) {
+							if(btnType == "password") {
+								//提交密码修改
+								Save_Password();
+							} else if(btnType == "telephone") {
+								//提交联系电话修改
+								save_telephone();
+							}
+						}
+						return false;
+					}
+				});
+			}
+
+			/*提交密码修改*/
+			function Save_Password() {
+				console.log('提交密码修改')
+				var password = $("#password2").val();
+				console.log('password', password)
+
+				//请求接口
+				var msg = '';
+				if(msg != "F") {
+					//提交成功
+					$('#mima-popup').modal('close'); //关闭窗体
+				} else {
+					//提交失败
+				}
+			}
+
+			/*提交联系电话修改*/
+			function save_telephone() {
+				console.log('提交联系电话修改')
+				var telephone = $("#telephone").val();
+				console.log('telephone', telephone)
+				//请求接口
+				var msg = '';
+				if(msg != "F") {
+					//提交成功
+					$('#dianhua-popup').modal('close'); //关闭窗体
+				} else {
+					//提交失败
+				}
+			}
+			
+			//提交界面大小图切换信息
+			function SaveJiemian(){
+				var $oPictureMode=$("input[name='PictureMode']:checked");
+				var PictureMode=$oPictureMode.val();
+				
+				//请求接口
+				var msg = '';
+				if(msg != "F") {
+					//提交成功
+					$('#mima-popup').modal('close'); //关闭窗体
+				} else {
+					//提交失败
+				}
+			}
+			/*提交版本刷新*/
+			function save_refresh() {
+				console.log('提交版本刷新')
+				//提示正在获取最新版本信息
+				//请求接口
+				setTimeout(function(){
+					$("#refresh").removeClass('am-icon-spin');
+				},1000)
+				
+				var msg = '';
+				if(msg != "F") {
+					var refresh_val="V1.1.2";
+					//提交成功
+					if(refresh_val==$("#refresh_val").html()){
+						//提示当前已是最新版本
+						
+					}else{
+						$("#refresh_val").html(refresh_val)
+					}
+					
+					
+				} else {
+					//提交失败
+				}
+			}
+
+
+
+		})(window);
+	</script>
+
+</html>

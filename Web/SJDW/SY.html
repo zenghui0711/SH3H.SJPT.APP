@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+
+		<!-- Set render engine for 360 browser -->
+		<meta name="renderer" content="webkit">
+
+		<!-- No Baidu Siteapp-->
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+		<!--<link rel="icon" type="image/png" href="assets/i/favicon.png">-->
+
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<!--<link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">-->
+
+		<!-- Add to homescreen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+		<!--<link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">-->
+
+		<!-- Tile icon for Win8 (144x144 + tile color) -->
+		<!--<meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">-->
+		<meta name="msapplication-TileColor" content="#0e90d2">
+
+		<link rel="stylesheet" href="../../assets/css/amazeui.min.css">
+		<link rel="stylesheet" href="../../assets/css/app.css">
+
+		<link rel="stylesheet" href="../../css/header.css">
+		<link rel="stylesheet" href="../../css/SY.css">
+		<link rel="stylesheet" href="../../css/sy_navbar.css">
+
+		<style>
+			
+		</style>
+	</head>
+
+	<body>
+
+		<div class="con" id="Page">
+
+			<div class="con-upper">
+				<header data-am-widget="header" class="am-header am-header-default">
+					<!--<div class="am-header-left am-header-nav">
+						<a href="javascript:;" class="leftlink">
+							<span class="am-icon-chevron-left am-icon-sm"></span>
+						</a>
+					</div>-->
+					<h1 class="am-header-title">
+			          	<a href="javascript:;" class="titlelink">
+			            	闵行区居村处置
+			          	</a>
+			      	</h1>
+					<div class="am-header-right am-header-nav">
+						<a href="javascript:;" class="rightlink">
+							<i class="am-header-icon am-icon-cog"></i>
+						</a>
+					</div>
+				</header>
+
+				<div class="uppers">
+					<img class="uppers-img" src="../../images/work.png" />
+
+					<div class="uppers-info">
+						<dl>
+							<dt>99+</dt>
+							<dd>待办事项</dd>
+						</dl>
+						<!--<dl>
+							<dt>99+</dt>
+							<dd>事件处置</dd>
+						</dl>-->
+						<dl>
+							<dt>99+</dt>
+							<dd>事件审核</dd>
+						</dl>
+						<dl>
+							<dt>99+</dt>
+							<dd>事件监管</dd>
+						</dl>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="con-lower">
+
+				<div class="lowers">
+					<dl class="lower" style="background-color: #ED5C5E;">
+						<dt><img src="../../images/cqaj.png"></dt>
+						<dd>
+							<div class="lower-number">99+</div>
+							<div class="lower-txt">超期案件</div>
+						</dd>
+					</dl>
+
+					<dl class="lower" style="background-color: #F99D22;">
+						<dt><img src="../../images/jjcq.png"></dt>
+						<dd>
+							<div class="lower-number">99+</div>
+							<div class="lower-txt">即将超期</div>
+						</dd>
+					</dl>
+
+					<dl class="lower" style="background-color: #67B3FC;">
+						<dt><img src="../../images/tjfx.png"></dt>
+						<dd>
+							<div class="lower-number">99+</div>
+							<div class="lower-txt">统计分析</div>
+						</dd>
+					</dl>
+				</div>
+
+			</div>
+
+			<Navbar :active="active"></Navbar>
+
+		</div>
+
+	</body>
+	<script src="../../js/jquery-1.11.3.min.js"></script>
+	<script src="../../assets/js/amazeui.min.js"></script>
+	<script src="../../js/public.js"></script>
+
+	<!--vue.js-->
+	<script src="../../js/vue.min.js"></script>
+	<script src="../../Components/Navbar.js"></script>
+
+	<script>
+		(function() {
+
+
+			new Vue({
+				el: '#Page',
+				data: {
+					active: GetRequest().iconType == undefined ? "home" : GetRequest().iconType
+				},
+			});
+
+			$(window).load(function() {
+				headerLink();//注册导航跳转
+				init()　　
+			});
+
+			function init() {
+
+			}
+
+		})(window);
+	</script>
+
+</html>

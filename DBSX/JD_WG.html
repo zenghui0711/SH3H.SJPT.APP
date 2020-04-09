@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>处置任务</title>
+
+		<!-- Set render engine for 360 browser -->
+		<meta name="renderer" content="webkit">
+
+		<!-- No Baidu Siteapp-->
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+		<!--<link rel="icon" type="image/png" href="assets/i/favicon.png">-->
+
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<!--<link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">-->
+
+		<!-- Add to homescreen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+		<!--<link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">-->
+
+		<!-- Tile icon for Win8 (144x144 + tile color) -->
+		<!--<meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">-->
+		<meta name="msapplication-TileColor" content="#0e90d2">
+
+		<link rel="stylesheet" href="../../../assets/css/amazeui.min.css">
+		<link rel="stylesheet" href="../../../assets/css/app.css">
+		<link rel="stylesheet" href="../../../css/header.css">
+
+		<style>
+			html,
+			body {
+				height: 100%;
+				font-family: "微软雅黑";
+				background-color: #E3F0FE;
+			}
+			
+			li {
+				list-style: none;
+			}
+			/*************upper*************/
+			
+			.con-upper {
+				background-color: #67B5FC;
+				padding-bottom: 56px;
+			}
+			
+			.uppers {
+				position: relative;
+				color: #FFFFFF;
+			}
+			
+			.uppers-info {
+				width: 96%;
+				margin: 0 auto;
+				/*margin: 0 20px;*/
+			}
+			
+			.uppers-info dt {
+				display: inline-block;
+				position: absolute;
+				z-index: 101;
+				right: 1%;
+			}
+			
+			.uppers-info dt img {
+				width: 90px;
+				height: 90px;
+			}
+			
+			.uppers-info dd {
+				display: inline-block;
+				margin-top: 10px;
+			}
+			
+			.uppers-number {
+				font-size: 18px;
+				font-weight: bold;
+			}
+			
+			.uppers-txt {
+				font-size: 14px;
+			}
+			/******menu******/
+			
+			.uppers-menu {
+				color: #9CC5FF;
+				background-color: #FFFFFF;
+				width: 96%;
+				height: 99px;
+				margin: 0 auto;
+				margin-top: 12px;
+				padding: 16px 0px 10px 12px;
+				position: absolute;
+				left: 2%;
+				overflow: hidden;
+			}
+			
+			.uppers-menu dl {
+				display: inline-block;
+				/*width: 24%;*/
+				width: 18%;
+				text-align: center;
+				margin: 0;
+				opacity: 0.4;
+			}
+			
+			.uppers-menu dl dt {
+				width: 40px;
+				margin: 0 auto;
+			}
+			
+			.uppers-menu dl dt img {
+				width: 100%;
+			}
+			
+			.on {
+				opacity: 1 !important;
+			}
+			/******menu******/
+			/*************upper*************/
+			/*************lower*************/
+			
+			.con-lower {
+				padding-top: 65px;
+				padding-bottom: 10px;
+			}
+			
+			.lower {
+				width: 96%;
+				margin: 0 auto;
+				margin-bottom: 10px;
+				background-color: #FFFFFF;
+				/*border-radius: 8px;*/
+				padding: 8px;
+				font-size: 14px;
+			}
+			
+			.lower-title {
+				font-size: 16px;
+				color: #9CC5FF;
+				border-left: 2px solid #9CC5FF;
+				padding-left: 6px;
+				height: 22px;
+				line-height: 22px;
+				margin-bottom: 10px;
+			}
+			
+			.req-title {
+				color: #797979;
+				font-size: 14px;
+			}
+			.req-txteare-numbr{
+				text-align: right;
+				display: inherit;
+				color: #797979;
+				font-size: 14px;
+				font-weight: normal;
+			}
+			
+			.lower-btn {
+				width: 96%;
+				margin: 0 auto;
+			}
+			
+			.lower-btn button {
+				border-radius: 6px;
+			}
+			/*************lower*************/
+		</style>
+	</head>
+
+	<body>
+		<form id="form1" class="am-form">
+			<div class="con">
+				<div class="con-upper">
+					<header data-am-widget="header" class="am-header am-header-default">
+						<div class="am-header-left am-header-nav">
+							<a href="javascript:;" class="leftlink">
+								<span class="am-icon-chevron-left am-icon-sm"></span>
+							</a>
+						</div>
+						<h1 class="am-header-title">
+					        <a href="javascript:;" class="titlelink">
+					        	案件详情
+					        </a>
+					    </h1>
+						<!--<div class="am-header-right am-header-nav">
+							<a href="javascript:;" class="rightlink">
+								<i class="am-header-icon am-icon-bars"></i>
+							</a>
+						</div>-->
+					</header>
+					<div class="uppers">
+						<dl class="uppers-info">
+							<dd>
+								<div class="uppers-number">1801H7826642</div>
+								<div class="uppers-txt">上报时间：<span>2018-01-04 14:52</span></div>
+								<div class="uppers-txt">发生地址：<span>上海市园中路1号</span></div>
+							</dd>
+							<dt><img src="../../../images/map.png" class="maplink"></dt>
+						</dl>
+						<div class="uppers-menu">
+							<dl hre-name='跳转地址'>
+								<dt><img src="../../../images/ICON/ico_财务管理_订单查询 (1).png"></dt>
+								<dd>详情</dd>
+							</dl>
+
+							<dl class="on" hre-name='跳转地址'>
+								<dt><img src="../../../images/ICON/待处理.png"></dt>
+								<dd>接单</dd>
+							</dl>
+
+							<dl hre-name='跳转地址'>
+								<dt><img src="../../../images/ICON/状态-派单 (1).png"></dt>
+								<dd>转派</dd>
+							</dl>
+
+							<dl hre-name='跳转地址'>
+								<dt><img src="../../../images/ICON/_订单 处理中 (1).png"></dt>
+								<dd>退单</dd>
+							</dl>
+
+							<dl hre-name='跳转地址'>
+								<dt><img src="../../../images/ICON/_订单 处理中 (1).png"></dt>
+								<dd>退单</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<div class="con-lower">
+
+					<div class="lower am-form-group">
+						<div class="lower-title">接单操作</div>
+						
+						<div>
+							<label class="req-title" for="JD_REMARK">接单备注</label>
+							<textarea id="JD_REMARK" rows="5" maxlength='200' data-validation-message="请输入1-200字以内" required></textarea>
+							<label class="req-txteare-numbr">
+								<span class="num-length1">0</span>/<span class="num-length2">200</span>
+							</label>
+						</div>
+					</div>
+
+					<div class="lower-btn">
+						<button type="submit" id="Save" class="am-btn am-btn-secondary am-btn-block">确 定</button>
+					</div>
+
+				</div>
+			</div>
+
+		</form>
+
+	</body>
+	<script src="../../../js/jquery-3.2.1.min.js"></script>
+	<script src="../../../assets/js/amazeui.min.js"></script>
+
+	<script>
+		(function() {
+			init();
+
+			function init() {
+				menu();
+				Valid();
+
+			}
+
+			/********跳转菜单********/
+			function menu() {
+				$('.uppers-menu dl').on('click', function() {
+					if(!$(this).hasClass('on')) {
+						$(this).addClass('on').siblings().removeClass('on');
+					}
+
+					//跳转
+					//var hreName=$(this).attr('hre-name');//跳转地址
+					//window.location=hreName;
+
+				})
+			}
+
+			/********验证********/
+			function Valid() {
+				var $form = $('#form1');
+				$form.validator({
+					onValid: function(validity) {
+						
+						/***监控字数***/
+						var JD_REMARK_length=$("#JD_REMARK").val().length;
+						$(".num-length1").html(JD_REMARK_length)
+						$(".num-length2").html(200-parseFloat(JD_REMARK_length))
+						/***监控字数***/
+						
+						
+						//通过验证效果
+						$(validity.field).closest('.am-form-group').find('.am-alert').hide();
+					},
+					onInValid: function(validity) {
+						/***监控字数***/
+						var JD_REMARK_length=$("#JD_REMARK").val().length;
+						$(".num-length1").html(JD_REMARK_length)
+						$(".num-length2").html(200-parseFloat(JD_REMARK_length))
+						/***监控字数***/
+						
+						
+						
+						//未通过验证效果
+						var $field = $(validity.field);
+						var $group = $field.closest('.am-form-group');
+						var $alert = $group.find('.am-alert');
+						// 使用自定义的提示信息 或 插件内置的提示信息
+						var msg = $field.data('validationMessage') || this.getValidationMessage(validity);
+
+						if(!$alert.length) {
+							$alert = $('<div class="am-alert am-alert-danger"></div>').hide().
+							appendTo($group);
+						}
+
+						$alert.html(msg).show();
+
+					},
+					submit: function() {
+						var formValidity = this.isFormValid();
+						console.warn('验证状态：', formValidity ? '通过' : '未通过');
+						if(formValidity) {
+							Save()
+						}
+						return false;
+					}
+				});
+
+			}
+			/********提交********/
+			function Save() {
+				console.log('提交')
+			}
+		})(window);
+	</script>
+
+</html>

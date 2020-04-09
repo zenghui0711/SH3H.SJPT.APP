@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>提示页面</title>
+
+		<!-- Set render engine for 360 browser -->
+		<meta name="renderer" content="webkit">
+
+		<!-- No Baidu Siteapp-->
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+		<!--<link rel="icon" type="image/png" href="assets/i/favicon.png">-->
+
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<!--<link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">-->
+
+		<!-- Add to homescreen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+		<!--<link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">-->
+
+		<!-- Tile icon for Win8 (144x144 + tile color) -->
+		<!--<meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">-->
+		<meta name="msapplication-TileColor" content="#0e90d2">
+
+		<link rel="stylesheet" href="../assets/css/amazeui.min.css">
+		<link rel="stylesheet" href="../assets/css/app.css">
+		<link href="../mobiscrollDate/css/mobiscroll_date.css" rel="stylesheet" />
+
+		<link rel="stylesheet" href="../css/header.css">
+		<link rel="stylesheet" href="../css/CaseInfo.css">
+		<style>
+			.con-upper-2 {
+				background-color: #67B5FC;
+				padding-bottom: 13px;
+				padding-top: 13px;
+			}
+			
+			.con-upper-2 .am-header-title a {
+				font-size: 24px;
+			}
+			
+			.result-Tips {
+				text-align: center;
+				color: #797979;
+				width: 96%;
+				margin: 0 auto;
+				margin-bottom: 26px;
+				background-color: #FFFFFF;
+				padding: 14px 8px;
+				/* font-size: 14px; */
+				font-size: 1.8rem;
+				border-radius: 8px;
+			}
+			
+			.result-Tips-icon {
+				width: 100px;
+				height: 100px;
+				margin: 20px auto 30px;
+			}
+			
+			.result-Tips-icon img {
+				width: 100%;
+			}
+			
+			.result-Tips-txt-success {
+				width: 90%;
+				margin: 10px auto;
+				text-align: center;
+			}
+			
+			.result-Tips-txt-fail {
+				width: 90%;
+				margin: 10px auto;
+				text-align: left;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="con">
+			<div class="con-upper-2">
+				<header data-am-widget="header" class="am-header am-header-default">
+					<!--<div class="am-header-left am-header-nav">
+						<a href="javascript:;" class="leftlink">
+							<span class="am-icon-chevron-left am-icon-sm"></span>
+						</a>
+					</div>-->
+					<h1 class="am-header-title">
+				        <a href="javascript:;" class="titlelink">
+				        	提示页面
+				        </a>
+				    </h1>
+					<!--<div class="am-header-right am-header-nav">
+						<a href="javascript:;" class="rightlink">
+							<i class="am-header-icon am-icon-bars"></i>
+						</a>
+					</div>-->
+				</header>
+
+			</div>
+			<div class="con-lower">
+
+				<div class="lowers-1">
+
+					<div class="result-Tips">
+						<div class="result-Tips-icon"><img src="../images/Fail.png"></div>
+						<div class="result-Tips-txt-fail">
+							<span class="Tips-content">
+								对不起，您刚刚的操作发生异常，请重新提交您的数据或者拨打维护热线12345678进行咨询
+							</span>
+						</div>
+					</div>
+
+					<div class="lower-btn">
+						<button type="button" id="back" class="am-btn am-btn-secondary am-btn-block">确 定</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</body>
+	<script src="../js/jquery-3.2.1.min.js"></script>
+	<script src="../assets/js/amazeui.min.js"></script>
+
+	<script>
+		(function() {
+			init();
+
+			function init() {
+				$("#back").on('click',function(){
+					 window.history.back();
+				})
+			}
+
+		})(window);
+	</script>
+
+</html>

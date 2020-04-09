@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>处置任务</title>
+
+		<!-- Set render engine for 360 browser -->
+		<meta name="renderer" content="webkit">
+
+		<!-- No Baidu Siteapp-->
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+		<!--<link rel="icon" type="image/png" href="assets/i/favicon.png">-->
+
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<!--<link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">-->
+
+		<!-- Add to homescreen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+		<!--<link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">-->
+
+		<!-- Tile icon for Win8 (144x144 + tile color) -->
+		<!--<meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">-->
+		<meta name="msapplication-TileColor" content="#0e90d2">
+
+		<link rel="stylesheet" href="../../../../assets/css/amazeui.min.css">
+		<link rel="stylesheet" href="../../../../assets/css/app.css">
+
+		<link rel="stylesheet" href="../../../../css/header.css">
+		<link rel="stylesheet" href="../../../../css/CaseInfo.css">
+	</head>
+
+	<body>
+		<form id="form1" class="am-form">
+			<div class="con">
+				<div class="con-upper">
+					<header data-am-widget="header" class="am-header am-header-default">
+						<div class="am-header-left am-header-nav">
+							<a href="javascript:;" class="leftlink">
+								<span class="am-icon-chevron-left am-icon-sm"></span>
+							</a>
+						</div>
+						<h1 class="am-header-title">
+				        <a href="javascript:;" class="titlelink">
+				        	处置任务
+				        </a>
+				    </h1>
+						<!--<div class="am-header-right am-header-nav">
+						<a href="javascript:;" class="rightlink">
+							<i class="am-header-icon am-icon-bars"></i>
+						</a>
+					</div>-->
+					</header>
+					<div class="uppers">
+						<dl class="uppers-info">
+							<dd>
+								<div class="uppers-number">1801H7826642</div>
+								<div class="uppers-txt">上报时间：<span>2018-01-04 14:52</span></div>
+								<div class="uppers-txt">发生地址：<span>上海市园中路1号</span></div>
+							</dd>
+							<dt><img src="../../../../images/map.png" class="maplink"></dt>
+						</dl>
+
+						<div class="uppers-menu uppers-menu-4">
+							<dl hre-name='跳转地址'>
+								<dt><img src="../../../../images/ICON/ico_财务管理_订单查询 (1).png"></dt>
+								<dd>详情</dd>
+							</dl>
+
+							<dl hre-name='跳转地址'>
+								<dt><img src="../../../../images/ICON/日终批处理 (2).png"></dt>
+								<dd>处置</dd>
+							</dl>
+
+							<dl hre-name='跳转地址'>
+								<dt><img src="../../../../images/ICON/_订单 处理中 (1).png"></dt>
+								<dd>退单</dd>
+							</dl>
+
+							<dl class="on" hre-name='跳转地址'>
+								<dt><img src="../../../../images/ICON/待处理工单.png"></dt>
+								<dd>延期</dd>
+							</dl>
+						</div>
+
+					</div>
+				</div>
+				<div class="con-lower">
+
+					<div class="lowers-1">
+						<!--延期操作-->
+						<div class="lower">
+							<div class="lower-title">延期操作</div>
+
+							<div class="lower-info">
+
+								<!--延期天数-->
+								<div class="am-form-group am-input-group">
+									<label class="req-title">延期天数</label>
+									<div class="wrappers">
+										<div class="wrapper wrapper-day"></div>
+										<span class="req-span">天</span>
+									</div>
+									<div class="wrappers">
+										<div class="wrapper wrapper-hour"></div>
+										<span class="req-span">时</span>
+									</div>
+
+									<div class="wrappers">
+										<div class="wrapper wrapper-minute"></div>
+										<span class="req-span">分</span>
+									</div>
+								</div>
+
+								<!--延期备注-->
+								<div class="am-form-group">
+									<label class="req-title" for="DELAY_REMARK">延期备注</label>
+									<textarea id="DELAY_REMARK" rows="5" maxlength='200' data-validation-message="请输入1-200字以内" required></textarea>
+									<label class="req-txteare-numbr">
+									<span class="num-length1">0</span>/<span class="num-length2">200</span>
+								</label>
+								</div>
+
+							</div>
+						</div>
+
+						<div class="lower-btn">
+							<button type="submit" id="Save" class="am-btn am-btn-secondary am-btn-block">确 定</button>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</form>
+
+	</body>
+	<script src="../../../../js/jquery-3.2.1.min.js"></script>
+	<script src="../../../../assets/js/amazeui.min.js"></script>
+	<script type="text/javascript" src="../../../../js/numberInput.js" charset="utf-8"></script>
+
+	<script>
+		(function() {
+			init();
+
+			function init() {
+				menu(); //跳转菜单
+				numInput(); //初始化数字控件
+				Valid(); //验证提交
+			}
+
+			/*初始化数字控件*/
+			function numInput() {
+				var numInput_arr = ["wrapper-day", "wrapper-hour", "wrapper-minute"];
+				numInput_arr.forEach(function(item, index) {
+					$("." + item).numInput({
+						width: 70, //宽度
+						min: 0, //最小值
+						max: 200, //最大值
+						floatCount: 0, //小数点后保留位数
+						//命名空间，防止样式冲突
+						wrapperClass: 'num-input-wrap', //最外层容器
+						inputClass: item, //input输入框
+						addClass: 'add', //增加按钮
+						subtractClass: 'subtract', //减少按钮
+					});
+				})
+
+			}
+
+			/*跳转菜单*/
+			function menu() {
+				$('.uppers-menu dl').on('click', function() {
+					if(!$(this).hasClass('on')) {
+						$(this).addClass('on').siblings().removeClass('on');
+					}
+
+					//跳转
+					//var hreName=$(this).attr('hre-name');//跳转地址
+					//window.location=hreName;
+
+				})
+			}
+
+			/********验证提交********/
+			function Valid() {
+				var $form = $('#form1');
+				$form.validator({
+					onValid: function(validity) {
+
+						//通过验证效果
+						var $field = $(validity.field);
+						$field.closest('.am-form-group').find('.am-alert').hide();
+
+						/***监控字数***/
+						var _length = $("#" + $field[0].id).val().length,
+							$length1 = $("#" + $field[0].id).next('.req-txteare-numbr').find('.num-length1'),
+							$length2 = $("#" + $field[0].id).next('.req-txteare-numbr').find('.num-length2');
+						if($field[0].type == "textarea") {
+							$length1.html(_length);
+							$length2.html(200 - parseFloat(_length));
+						}
+						/***监控字数***/
+
+					},
+					onInValid: function(validity) {
+
+						//未通过验证效果
+						var $field = $(validity.field);
+						var $group = $field.closest('.am-form-group');
+						var $alert = $group.find('.am-alert');
+						// 使用自定义的提示信息 或 插件内置的提示信息
+						var msg = $field.data('validationMessage') || this.getValidationMessage(validity);
+
+						if(!$alert.length) {
+							$alert = $('<div class="am-alert am-alert-danger"></div>').hide().
+							appendTo($group);
+						}
+
+						$alert.html(msg).show();
+
+						/***监控字数***/
+						var _length = $("#" + $field[0].id).val().length,
+							$length1 = $("#" + $field[0].id).next('.req-txteare-numbr').find('.num-length1'),
+							$length2 = $("#" + $field[0].id).next('.req-txteare-numbr').find('.num-length2');
+						if($field[0].type == "textarea") {
+							$length1.html(_length);
+							$length2.html(200 - parseFloat(_length));
+						}
+						/***监控字数***/
+
+					},
+					submit: function() {
+						var formValidity = this.isFormValid();
+						console.warn('验证状态：', formValidity ? '通过' : '未通过');
+						if(formValidity) {
+							Save()
+						}
+						return false;
+					}
+				});
+
+			}
+			/********提交********/
+			function Save() {
+				console.log('提交')
+				
+				var day=$(".wrapper-day").eq(1).val();//延期天数-天
+				var hour=$(".wrapper-hour").eq(1).val();//延期天数-时
+				var minute=$(".wrapper-minute").eq(1).val();//延期天数-分
+				
+				//延期备注
+				var DELAY_REMARK=$("#DELAY_REMARK").val();
+				
+				//发送请求，提交数据，接收状态
+//				var msg='S';
+//				if(msg!="F"){
+//					//提交成功
+//					window.location="../../../Success.html";
+//				}else{
+//					//提交失败
+//					window.location="../../../Fail.html";
+//				}
+
+
+			}
+		})(window);
+	</script>

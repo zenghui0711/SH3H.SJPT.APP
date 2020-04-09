@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>处置任务</title>
+
+		<!-- Set render engine for 360 browser -->
+		<meta name="renderer" content="webkit">
+
+		<!-- No Baidu Siteapp-->
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+		<!--<link rel="icon" type="image/png" href="assets/i/favicon.png">-->
+
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<!--<link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">-->
+
+		<!-- Add to homescreen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+		<!--<link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">-->
+
+		<!-- Tile icon for Win8 (144x144 + tile color) -->
+		<!--<meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">-->
+		<meta name="msapplication-TileColor" content="#0e90d2">
+
+		<link rel="stylesheet" href="../../../assets/css/amazeui.min.css">
+		<link rel="stylesheet" href="../../../assets/css/app.css">
+
+		<link rel="stylesheet" href="../../../css/CaseInfo.css">
+
+		<style>
+			
+		</style>
+
+	</head>
+
+	<body>
+		<div>上传照片</div>
+		<div>
+			<div class="gallery" id="gallery">
+				<span class="gallery-img" id="galleryImg"></span>
+				<div class="gallery-opr">
+					<a href="javascript:;" rel="external nofollow" class="gallery-del">
+						<span class="am-icon-trash am-icon-sm"></span>
+					</a>
+				</div>
+			</div>
+			<ul class="uploader-images" id="uploaderFiles">
+			</ul>
+			<span class="uploader-input" id="uploader">
+				<input type="file" accept="image/*"  id="fileUpload1" name="upload"/>
+			</span>
+		</div>
+
+		<div>
+			<button id="sava">提交</button>
+		</div>
+		<input type="hidden" id="hfFile0" class="hfFile" />
+		<input type="hidden" id="hfFile1" class="hfFile" />
+		<input type="hidden" id="hfFile2" class="hfFile" />
+		<input type="hidden" id="hd_piclist" />
+
+	</body>
+	<script src="../../../js/jquery-3.2.1.min.js"></script>
+	<script src="../../../assets/js/amazeui.min.js"></script>
+
+	<script src="../../../js/processImg.js"></script>
+	<script src="../../../js/exif.min.js"></script>
+
+</html>
+<script>
+	uploader();
+
+	function uploader() {
+
+		var tmpl = '<li><img src="#url#" /></li>',
+			$uploader = $("#uploader"),
+			$uploaderFiles = $("#uploaderFiles");
+
+		//点击添加图片
+		compressImg('fileUpload1', 'uploaderFiles', 800, function(src) {
+			if(URL) {
+
+				$uploaderFiles.append($(tmpl.replace('#url#', src)));
+
+				//判断最后一张或者超过三张
+				if($uploaderFiles.find("li").length >= 3) {
+					$uploader.hide()
+					return false;
+				}
+			}
+		});
+
+		/******预览、删除******/
+		//预览照片
+		var $gallery = $("#gallery"),
+			$galleryImg = $("#galleryImg");
+		var index; //第几张图片
+		$uploaderFiles.on("click", "li", function() {
+			index = $(this).index();
+
+			var _style = 'background-image: url(' + $(this).find('img').attr('src') + ')';
+			$galleryImg.attr("style", _style);
+			$gallery.fadeIn(100);
+		});
+		//收起预览
+		$gallery.on("click", function() {
+			$gallery.fadeOut(100);
+		});
+
+		//删除图片 删除图片的代码也贴出来。
+		$(".gallery-del").click(function() { //这部分刚才放错地方了，放到$(function(){})外面去了
+			console.log('删除');
+
+			$uploaderFiles.find("li").eq(index).remove();
+			$galleryImg.attr("style", '');
+			$uploader.show();
+		});
+		/******预览、删除******/
+
+	}
+
+	$("#sava").on('click', function() {
+		uploadTaskImage();
+		UpLoadImg();
+	})
+
+	//确认提交照片
+	function uploadTaskImage() {
+		var ImageObj = $("#uploaderFiles").find("li");
+		$(ImageObj).each(function(index, obj) {
+			$("#hfFile" + index).val($(this).find('img').attr('src').replace('data:image/png;base64,', ''));
+		});
+	}
+	
+	//确认上传照片
+	function UpLoadImg() {
+		var $ahfFile = $('.hfFile');
+		$ahfFile.each(function(index, item) {
+			var file = $(this).val();
+			if(file != "" && file != undefined && file != null) {
+				//发送ajax请求上传照片，接收返回结果msg
+				var msg='';
+				
+				var hd_picnames = $("#hd_piclist").val();
+				if(hd_picnames == "") {
+					$("#hd_piclist").val(msg)
+				} else {
+					$("#hd_piclist").val(hd_picnames + "," + msg);
+				}
+			}
+		})
+	}
+</script>

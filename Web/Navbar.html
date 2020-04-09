@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+
+		<!-- Set render engine for 360 browser -->
+		<meta name="renderer" content="webkit">
+
+		<!-- No Baidu Siteapp-->
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+		<!--<link rel="icon" type="image/png" href="assets/i/favicon.png">-->
+
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<!--<link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">-->
+
+		<!-- Add to homescreen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+		<!--<link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">-->
+
+		<!-- Tile icon for Win8 (144x144 + tile color) -->
+		<!--<meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">-->
+		<meta name="msapplication-TileColor" content="#0e90d2">
+
+		<link rel="stylesheet" href="../assets/css/amazeui.min.css">
+		<link rel="stylesheet" href="../assets/css/app.css">
+		<link rel="stylesheet" href="../css/sy_navbar.css">
+
+	</head>
+
+	<body>
+
+		<!--<div>-->
+		
+
+			<div id="Navbar">
+				<Navbar :active="active"></Navbar>
+			</div>
+			<!--<div>
+			<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default " id="">
+				<ul class="am-navbar-nav am-cf am-avg-sm-4">
+					<li hre-name='Navbar.html?iconType=home'>
+						<a href="javascript:;" class="">
+							<span class="my-nav-icon" icon-type="home"></span>
+						</a>
+					</li>
+					<li hre-name='Navbar'>
+						<a href="javascript:;" class="">
+							<span class="my-nav-icon" icon-type="envelope"></span>
+						</a>
+					</li>
+					<li hre-name='Navbar.html?iconType=search'>
+						<a href="javascript:;" class="">
+							<span class="my-nav-icon" icon-type="search"></span>
+						</a>
+					</li>
+					<li hre-name='Navbar.html?iconType=me'>
+						<a href="javascript:;" class="">
+							<span class="my-nav-icon" icon-type="me"></span>
+						</a>
+					</li>
+
+				</ul>
+			</div>
+
+		</div>-->
+
+		<!--</div>-->
+	</body>
+	<script src="../js/jquery-1.11.3.min.js"></script>
+	<script src="../assets/js/amazeui.min.js"></script>
+
+	<script src="../js/vue.min.js"></script>
+	<script src="../Components/Navbar.js"></script>
+
+</html>
+<script>
+	(function(){
+		// 创建根实例
+		new Vue({
+			el: '#Navbar',
+			// 定义属性，并设置初始值
+			data: {
+				active: 'me'
+			},
+		})
+	})()
+
+//		var iframe = document.getElementById("iframe1");
+//		//var iwindow = iframe.contentWindow;
+//		//var idoc = iwindow.document;
+//		//iframe.height = idoc.body.offsetHeight;
+//		iframe.height = window.innerHeight*0.9;
+
+	//	$("#content").load('UserInfo.html', function() {})
+</script>
+
+<script>
+	//	//传入参数
+	//	var query = GetRequest();
+	//	var iconType = (query.iconType == "" || query.iconType == undefined) ? "home" : query.iconType;
+
+	//	//判断当前处于哪个Navbar
+	//	var $aNavli = $(".am-navbar-nav li");
+	//	$aNavli.each(function() {
+	//		var icon_type = $(this).find('span').attr('icon-type');
+	//		if(iconType == icon_type) {
+	//			$(this).addClass('on').siblings().removeClass('on');
+	//			$(this).find('span').attr('icon-type', icon_type + '_on');
+	//
+	//			var $aSpa = $(this).siblings().find('span');
+	//			$aSpa.each(function() {
+	//				icon_type = $(this).attr('icon-type');
+	//				$(this).attr('icon-type', icon_type.replace('_on', ''));
+	//			})
+	//		}
+	//
+	//	})
+
+	//	//切换点击效果
+	//		if(!$(this).hasClass('on')) {
+	//
+	//			$(this).addClass('on').siblings().removeClass('on');
+	//			
+	//			var icon_type = $(this).find('span').attr('icon-type');
+	//			$(this).find('span').attr('icon-type',icon_type+'_on');
+	//		
+	//			
+	//			var $aSpa=$(this).siblings().find('span');
+	//			$aSpa.each(function(){
+	//				icon_type=$(this).attr('icon-type');
+	//				$(this).attr('icon-type',icon_type.replace('_on',''));
+	//			})
+	//		}
+
+	//	//跳转页面
+	//	$(".am-navbar-nav li").on('click', function() {
+	//		var hre_name = $(this).attr('hre-name'); //跳转页面名称
+	//		console.log('hre_name', hre_name)
+	//		window.location = hre_name;
+	//	});
+
+	//	function GetRequest() {
+	//		var url = location.search; //获取url中"?"符后的字串   
+	//		var theRequest = new Object();
+	//		if(url.indexOf("?") != -1) {
+	//			var str = url.substr(1);
+	//			strs = str.split("&");
+	//			for(var i = 0; i < strs.length; i++) {
+	//				theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+	//			}
+	//		}
+	//		return theRequest;
+	//	}
+</script>

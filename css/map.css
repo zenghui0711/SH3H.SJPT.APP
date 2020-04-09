@@ -1,0 +1,79 @@
+.map_model {
+	padding-top: 30px;
+}
+
+.map_model .close {
+	display: inline-block;
+	vertical-align: middle;
+	width: 20px;
+	height: 20px;
+	background-image: url(../images/close.png);
+	background-repeat: no-repeat;
+	background-size: 20px;
+	/*background-origin: content-box;
+	background-position:top right;*/
+	float: right;
+	cursor: pointer;
+
+}
+.map_model .am-modal-dialog{
+	width: 100%;
+	height: 100%;
+	top: 0;
+	margin-top: 0 !important;
+	background-color: #E3F0FE;
+}
+.map_model .am-modal-dialog .lower{
+	margin-top: 10px;
+}
+.map-Tips {
+	color: #797979;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.map-Tips label {
+	font-size: 16px;
+	font-weight: bold;
+	display: inline-block;
+	
+}
+
+.map-location {
+	display: inline-block;
+	width: 34px;
+	height: 34px;
+	vertical-align: middle;
+}
+.map_model .am-modal-dialog .map-location{
+	width: 29px;
+}
+
+.map-location img {
+	width: 100%;
+}
+
+.map-content {
+	margin: 6px 0;
+	font-size: 14px;
+	font-weight: bold;
+	color: #CCCCCC;
+	border: 1px solid #CCCCCC;
+	border-left: 0;
+	border-right: 0;
+}
+
+.map-content input {
+	font-size: 14px !important;
+	font-weight: bold !important;
+	color: #CCCCCC !important;
+	border: 0 !important;
+	background-color: #FFFFFF !important;
+}
+
+.map_model .lower-btn{
+	margin-top: 20px;
+}
+#container {
+	/*height: 400px;*/
+}

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>核实任务</title>
+
+		<!-- Set render engine for 360 browser -->
+		<meta name="renderer" content="webkit">
+
+		<!-- No Baidu Siteapp-->
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+		<!--<link rel="icon" type="image/png" href="assets/i/favicon.png">-->
+
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<!--<link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">-->
+
+		<!-- Add to homescreen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+		<!--<link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">-->
+
+		<!-- Tile icon for Win8 (144x144 + tile color) -->
+		<!--<meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">-->
+		<meta name="msapplication-TileColor" content="#0e90d2">
+
+		<link rel="stylesheet" href="../../../../assets/css/amazeui.min.css">
+		<link rel="stylesheet" href="../../../../assets/css/app.css">
+		<link href="../../../../mobiscrollDate/css/mobiscroll_date.css" rel="stylesheet" />
+
+		<link rel="stylesheet" href="../../../../css/header.css">
+		<link rel="stylesheet" href="../../../../css/CaseInfo.css">
+		<style>
+			
+		</style>
+	</head>
+
+	<body>
+		<form id="form1" class="am-form">
+			<div class="con">
+				<div class="con-upper">
+					<header data-am-widget="header" class="am-header am-header-default">
+						<div class="am-header-left am-header-nav">
+							<a href="javascript:;" class="leftlink">
+								<span class="am-icon-chevron-left am-icon-sm"></span>
+							</a>
+						</div>
+						<h1 class="am-header-title">
+				        <a href="javascript:;" class="titlelink">
+				        	核实任务
+				        </a>
+				    </h1>
+						<!--<div class="am-header-right am-header-nav">
+						<a href="javascript:;" class="rightlink">
+							<i class="am-header-icon am-icon-bars"></i>
+						</a>
+					</div>-->
+					</header>
+					<div class="uppers">
+						<dl class="uppers-info">
+							<dd>
+								<div class="uppers-number">1801H7826642</div>
+								<div class="uppers-txt">上报时间：<span>2018-01-04 14:52</span></div>
+								<div class="uppers-txt">发生地址：<span>上海市园中路1号</span></div>
+							</dd>
+							<dt><img src="../../../../images/map.png" class="maplink"></dt>
+						</dl>
+
+						<div class="uppers-menu uppers-menu-3">
+							<dl hre-name='跳转地址'>
+								<dt><img src="../../../../images/ICON/ico_财务管理_订单查询 (1).png"></dt>
+								<dd>案件详情</dd>
+							</dl>
+
+							<dl hre-name='跳转地址'>
+								<dt><img src="../../../../images/ICON/人员核实（指） (1).png"></dt>
+								<dd>下发核实</dd>
+							</dl>
+
+							<dl class="on" hre-name='跳转地址'>
+								<dt><img src="../../../../images/ICON/人员核实 (1).png"></dt>
+								<dd>上报核实</dd>
+							</dl>
+
+						</div>
+
+					</div>
+				</div>
+				<div class="con-lower">
+
+					<div class="lowers-1">
+						<!--上报核实操作-->
+						<div class="lower">
+							<div class="lower-title">上报核实操作</div>
+
+							<div class="lower-info">
+
+								<!--核实结果-->
+								<div class="am-form-group">
+									<label class="req-title" for="SBHS_RESULT">核实结果</label>
+									<select id="SBHS_RESULT" data-am-selected="{btnWidth: '100%' }">
+										<option value="条目一" selected>条目一</option>
+										<option value="条目二">条目二</option>
+									</select>
+								</div>
+
+								<!--核实备注-->
+								<div class="am-form-group">
+									<label class="req-title" for="SBHS_REMARK">核实备注</label>
+									<textarea id="SBHS_REMARK" rows="2" maxlength='200' data-validation-message="请输入1-200字以内" required></textarea>
+									<label class="req-txteare-numbr">
+										<span class="num-length1">0</span>/<span class="num-length2">200</span>
+									</label>
+								</div>
+
+								<!--核实照片-->
+								<div class="am-form-group">
+									<label class="req-title" for="SBHS_IMAGE">核实照片</label>
+									<ul class="uploader-images" id="uploaderFiles">
+									</ul>
+									<span class="uploader-input" id="uploader">
+										<input type="file" accept="image/*" id="SBHS_IMAGE" data-validation-message="请选择1-3张照片" required/>
+									</span>
+
+									<!--照片预览-->
+									<div class="gallery" id="gallery">
+										<span class="gallery-img" id="galleryImg"></span>
+										<div class="gallery-opr">
+											<a href="javascript:;" rel="external nofollow" class="gallery-del">
+												<span class="am-icon-trash am-icon-sm"></span>
+											</a>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+						<div class="lower-btn">
+							<button type="submit" id="Save" class="am-btn am-btn-secondary am-btn-block">确 定</button>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<input type="hidden" id="hfFile0" class="hfFile" />
+			<input type="hidden" id="hfFile1" class="hfFile" />
+			<input type="hidden" id="hfFile2" class="hfFile" />
+			<input type="hidden" id="hd_piclist" />
+
+		</form>
+	</body>
+	<script src="../../../../js/jquery-3.2.1.min.js"></script>
+	<script src="../../../../assets/js/amazeui.min.js"></script>
+	<script src="../../../../js/processImg.js"></script>
+	<script src="../../../../js/exif.min.js"></script>
+	<script>
+		(function() {
+			init();
+
+			function init() {
+				menu(); //跳转菜单
+				uploader(); //上传图片
+				Valid(); //验证提交
+
+			}
+
+			/*跳转菜单*/
+			function menu() {
+				$('.uppers-menu dl').on('click', function() {
+					if(!$(this).hasClass('on')) {
+						$(this).addClass('on').siblings().removeClass('on');
+					}
+
+					//跳转
+					//var hreName=$(this).attr('hre-name');//跳转地址
+					//window.location=hreName;
+
+				})
+			}
+
+			/********验证提交********/
+			function Valid() {
+				var $form = $('#form1');
+				$form.validator({
+					onValid: function(validity) {
+
+						//通过验证效果
+						var $field = $(validity.field);
+						$field.closest('.am-form-group').find('.am-alert').hide();
+
+						/***监控字数***/
+						if($field[0].type == "textarea") {
+							var _length = $("#" + $field[0].id).val().length,
+								$length1 = $("#" + $field[0].id).next('.req-txteare-numbr').find('.num-length1'),
+								$length2 = $("#" + $field[0].id).next('.req-txteare-numbr').find('.num-length2');
+
+							$length1.html(_length);
+							$length2.html(200 - parseFloat(_length));
+						}
+						/***监控字数***/
+
+					},
+					onInValid: function(validity) {
+
+						//未通过验证效果
+						var $field = $(validity.field);
+						var $group = $field.closest('.am-form-group');
+						var $alert = $group.find('.am-alert');
+						// 使用自定义的提示信息 或 插件内置的提示信息
+						var msg = $field.data('validationMessage') || this.getValidationMessage(validity);
+
+						if(!$alert.length) {
+							$alert = $('<div class="am-alert am-alert-danger"></div>').hide().
+							appendTo($group);
+						}
+
+						$alert.html(msg).show();
+
+						/***重写照片上传区域验证效果***/
+						if($field[0].id == "SBHS_IMAGE") {
+							console.log('id', $field[0].id)
+							console.log('length', $("#uploaderFiles").find("li").length)
+							if($("#uploaderFiles").find("li").length > 0) {
+								$field.closest('.am-form-group').find('.am-alert').hide();
+								$field.closest('.am-form-group').removeClass('am-form-error').addClass('am-form-success')
+								$field.closest('input[type="file"]').removeClass('am-form-error').addClass('am-field-valid')
+								validity.valid = true;
+							}
+						}
+						/***重写照片上传区域验证效果***/
+
+						/***监控字数***/
+						if($field[0].type == "textarea") {
+							var _length = $("#" + $field[0].id).val().length,
+								$length1 = $("#" + $field[0].id).next('.req-txteare-numbr').find('.num-length1'),
+								$length2 = $("#" + $field[0].id).next('.req-txteare-numbr').find('.num-length2');
+
+							$length1.html(_length);
+							$length2.html(200 - parseFloat(_length));
+						}
+						/***监控字数***/
+
+					},
+					submit: function(validity) {
+						var formValidity = this.isFormValid();
+
+						//照片为空时，手动改变验证状态
+						if($("#uploaderFiles").find("li").length == 0) {
+							formValidity = false;
+						}
+
+						console.warn('验证状态：', formValidity ? '通过' : '未通过');
+
+						if(formValidity) {
+							Save()
+						}
+						return false;
+					}
+				});
+
+			}
+			/********提交********/
+			function Save() {
+				console.log('提交')
+				uploadTaskImage();
+				UpLoadImg();
+			}
+			/****************上传图片beg****************/
+			function uploader() {
+
+				var tmpl = '<li><img src="#url#" /></li>',
+					$uploader = $("#uploader"),
+					$uploaderFiles = $("#uploaderFiles");
+
+				//点击添加图片
+				compressImg('SBHS_IMAGE', 'uploaderFiles', 800, function(src) {
+					if(URL) {
+
+						$uploaderFiles.append($(tmpl.replace('#url#', src)));
+
+						//判断最后一张或者超过三张
+						if($uploaderFiles.find("li").length >= 3) {
+							$uploader.hide()
+							return false;
+						}
+					}
+				});
+				
+				//预览、删除照片
+				preview("uploaderFiles",true,"SBHS_IMAGE");
+				
+			}
+
+			//确认提交照片
+			function uploadTaskImage() {
+				var ImageObj = $("#uploaderFiles").find("li");
+				$(ImageObj).each(function(index, obj) {
+					$("#hfFile" + index).val($(this).find('img').attr('src').replace('data:image/png;base64,', ''));
+				});
+			}
+
+			//确认上传照片
+			function UpLoadImg() {
+				var $ahfFile = $('.hfFile');
+				$ahfFile.each(function(index, item) {
+					var file = $(this).val();
+					if(file != "" && file != undefined && file != null) {
+						//发送ajax请求上传照片，接收返回结果msg
+						var msg = '';
+
+						var hd_picnames = $("#hd_piclist").val();
+						if(hd_picnames == "") {
+							$("#hd_piclist").val(msg)
+						} else {
+							$("#hd_piclist").val(hd_picnames + "," + msg);
+						}
+					}
+				})
+			}
+			/****************上传图片end****************/
+
+		})(window);
+	</script>
+
+</html>

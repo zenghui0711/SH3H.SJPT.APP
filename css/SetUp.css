@@ -1,0 +1,176 @@
+/*设置样式*/
+
+html,
+body {
+	height: 100%;
+	font-family: "微软雅黑";
+	background-color: #E3F0FE;
+}
+
+li {
+	list-style: none;
+}
+
+.lowers input {
+	font-size: 14px;
+	text-indent: 3px;
+	color: #797979;
+	background-color: #FFFFFF;
+	border: none;
+	height: 30px;
+	line-height: 30px;
+	width: 100%;
+}
+
+.lower {
+	width: 94%;
+	margin: 0 auto;
+	margin-top: 6%;
+}
+
+
+/*按钮*/
+
+.lower-btn {
+	width: 96%;
+	margin: 0 auto;
+	margin-top: 16px;
+}
+
+.lower-btn button {
+	border-radius: 6px;
+}
+
+
+/*************弹窗*************/
+
+.am-popup,
+.am-popup-bd {
+	font-family: "微软雅黑";
+	background-color: #E3F0FE;
+}
+
+.am-popup .am-header {
+	border-bottom: none;
+	height: 43px;
+	line-height: 43px;
+}
+
+.am-popup-hd .am-close {
+	position: absolute;
+	right: 18px;
+	top: 8px;
+	cursor: pointer;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+	color: #000;
+	font-size: 38px;
+}
+
+.am-popup .lower {
+	width: 100%;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	background-color: #FFFFFF;
+	padding: 8px;
+	font-size: 14px;
+}
+
+.am-popup .lower-title {
+	font-size: 16px;
+	color: #9CC5FF;
+	border-left: 2px solid #9CC5FF;
+	padding-left: 6px;
+	height: 22px;
+	line-height: 22px;
+	margin-bottom: 10px;
+}
+
+.am-form-group label {
+	width: 100%;
+}
+
+.req-title {
+	color: #797979;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.am-form-group input {
+	width: 100%;
+	height: 37px;
+	line-height: 37px;
+	border: 1px solid transparent;
+	border-color: #e6e6e6;
+}
+
+.CaseInfo {
+	/*margin-bottom: 4px;*/
+	padding: 0;
+}
+
+.CaseInfo li {
+	position: relative;
+	padding: 6px 0 6px;
+	line-height: 24px;
+}
+
+.CaseInfo li:after {
+	content: "";
+	border-bottom: 1px solid #F2F2F2;
+	color: #F2F2F2;
+	position: absolute;
+	left: 66px;
+	bottom: 2px;
+	height: 1px;
+	width: 78%;
+	overflow: hidden;
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	-webkit-transform: scaleY(0.5);
+	transform: scaleY(0.5);
+}
+
+.txt-left {
+	display: inline-block;
+	text-align: right;
+	width: 60px;
+	position: absolute;
+	color: #797979;
+}
+
+.txt-right {
+	display: inline-block;
+	/*	width: 67%;*/
+	overflow: hidden;
+	margin-left: 66px;
+	color: #333333;
+	padding-right: 4px;
+}
+
+.txt-describe {
+	max-height: 196px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.req-refresh {
+	position: absolute;
+	right: 4px;
+	top: 0px;
+	font-size: 22px;
+	display: inline-block;
+}
+
+.refresh-li {
+	height: 46px;
+	padding: 0px !important;
+	line-height: 46px !important;
+}
+
+.am-popup .lower-btn {
+	width: 100%;
+}
+
+
+/*************弹窗end*************/
